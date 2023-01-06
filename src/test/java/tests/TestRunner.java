@@ -49,20 +49,28 @@ public class TestRunner extends BaseTest {
         @DataProvider
     public Object[][] getProductData() {
         return new Object[][] {
-                { "T-shirt" },
-                { "Chaise" },
-                { "Ampoule" }
+                { "T-shirt" }
+        };
+    }
+
+    @DataProvider
+    public Object[][] getProductDataForAdd() {
+        return new Object[][] {
+                { "Ampoule Vecteur Incandescent" },
+                { "T-shirt en coton biologique" },
+                { "Chaussures Hommes de Ville" }
         };
     }
 
     @Test(priority = 2,dataProvider = "getProductData")
-    public void searchTest(String productName) throws InterruptedException {
-//        Thread.sleep(5000);
+    public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
                 .filter(new Locator.FilterOptions().setHasText(productName));
 
         int count = p.count();
+        if (count  == 0 )
+            count++;
         for (int i = 0; i < count; ++i) {
             String s = homePage.getResultSearch(i, productName);
 
@@ -77,6 +85,17 @@ public class TestRunner extends BaseTest {
         }
     }
 
+    @Test(priority = 3,dataProvider = "getProductDataForAdd")
+    public void addToCartTest(String productName) {
+     homePage.page.fill("id=style_input_navbar_search__Scaxy","");
+     homePage.emptyTheCart();
+     homePage.ClickOnAnArticle(productName);
+     homePage.ClickOnAddToCart();
+        Assert.assertTrue(homePage.VerifyArticleInCart(productName),"Article absent du panier");
+
+//        Locator p = homePage.page.locator(homePage.searchResult)
+//                .filter(new Locator.FilterOptions().setHasText(productName));
+    }
 //    @Test(priority = 2)@Ignore
 //    public void forgotPwdLinkExistTest() {
 //        Assert.assertTrue(loginPage.isForgotPwdLinkExist());

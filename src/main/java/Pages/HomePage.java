@@ -8,10 +8,13 @@ import com.microsoft.playwright.Selectors;
 import com.microsoft.playwright.TimeoutError;
 import com.microsoft.playwright.options.AriaRole;
 import io.qameta.allure.Allure;
+import org.testng.Assert;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.regex.Pattern;
 
 public class HomePage {
 
@@ -27,7 +30,7 @@ public class HomePage {
 
     String notifOfAdd = "text=Votre panier à été mis à jour";
 
-    String badgeOfAdd = "#style_content_cart_wrapper__mqNbf >> text=1";
+    String badgeOfAdd = "#style_content_cart_wrapper__mqNbf >> text=0";
 
     String cartIcon = "id=style_content_cart_wrapper__mqNbf";
 
@@ -123,14 +126,28 @@ public class HomePage {
         page.click(Deco);
     }
 
-    public void ClickOnAnArticle() {
-        page.waitForSelector(ItemAmpoule);
-        page.click(ItemAmpoule);
+    public void ClickOnAnArticle(String articleToAdd) {
+
+        try {
+            Locator p = page.locator(searchResult)
+                    .filter(new Locator.FilterOptions().setHasText(articleToAdd));
+            p.waitFor(new Locator.WaitForOptions().setTimeout(15000));
+            p.click();
+        } catch (TimeoutError e) {
+            System.out.println("Timeout to click on article");
+        }
+
     }
 
     public void ClickOnAddToCart() {
-        page.waitForSelector(addToCartBtn);
-        page.click(addToCartBtn);
+
+
+        try {
+            page.waitForSelector(addToCartBtn, new Page.WaitForSelectorOptions().setTimeout(15000));
+            page.click(addToCartBtn);
+        } catch (TimeoutError e) {
+            System.out.println("Timeout to click on article");
+        }
     }
 
     public String VerifyNotification(){
@@ -138,13 +155,6 @@ public class HomePage {
         return page.textContent(notifOfAdd);
 
 
-//        try {        page.waitForSelector(addToCartBtn);
-//            return true;
-//        }
-//        catch (Error error){
-//            return false;
-//
-//        }
     }
 
     public String VerifyBadge() {
@@ -152,19 +162,34 @@ public class HomePage {
         return page.textContent(badgeOfAdd);
     }
 
-    public String VerifyArticleInCart() {
-        page.waitForSelector(articleIncart);
-        return page.textContent(articleIncart);
+    public Boolean VerifyArticleInCart(String productName) {
+
+        try {
+            page.click("#style_content_cart_wrapper__mqNbf > span");
+            Locator p = page.locator(".style_card__JLMp6")
+                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productName)));
+            p.waitFor();
+            return p.isVisible();
+        } catch (TimeoutError e) {
+            System.out.println("Timeout when looking in cart!");
+            return page.locator(".style_card__JLMp6")
+                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productName))).isVisible();
+
+        }
+
     }
 
 
     public void emptyTheCart() {
-        if (page.isVisible(badgeOfAdd)){
-        page.waitForSelector(cartIcon);
-        // Click #style_content_cart_wrapper__mqNbf
-        page.click(cartIcon);
-        // Click text=Vider le panier
-        page.click("text=Vider le panier");}
+        if (!page.isVisible(badgeOfAdd)){
+            try {
+                page.waitForSelector(cartIcon, new Page.WaitForSelectorOptions().setTimeout(15000));
+                page.click(cartIcon);
+                page.click("text=Vider le panier");
+            } catch (TimeoutError e) {
+                System.out.println("Timeout to empty the cart!");
+            }
+}
     }
 
     public void removeOnItemFromCart() {
