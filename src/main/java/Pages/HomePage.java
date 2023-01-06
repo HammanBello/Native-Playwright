@@ -6,6 +6,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Selectors;
 import com.microsoft.playwright.TimeoutError;
+import com.microsoft.playwright.options.AriaRole;
 import io.qameta.allure.Allure;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class HomePage {
 
     String searchBar = "id=style_input_navbar_search__Scaxy";
 
-    String searchResult = "class=style_card__gNEqX";
+    public String searchResult = ".style_card__gNEqX";
 
     String erreurNonConnected = "text=Connexion";
 
@@ -186,16 +187,26 @@ public class HomePage {
         }
         page.fill(searchBar, searchTerm);}
 
-    public Boolean getResultSearch(String searchedTerms) {
+    public String getResultSearch(int x, String searchedTerms) {
         Locator p = page.locator(searchResult)
-                .filter(new Locator.FilterOptions().setHasText(searchedTerms));
-        
-//        try {
+                .filter(new Locator.FilterOptions().setHasText(searchedTerms)).nth(x);
+
+
+        try {
+//            page.waitForSelector("class=style_card__gNEqX",new Page.WaitForSelectorOptions().setTimeout(15000));
+            p.waitFor(new Locator.WaitForOptions().setTimeout(15000));
 //            page.waitForSelector(searchResult, new Page.WaitForSelectorOptions().setTimeout(15000));
-//        } catch (TimeoutError e) {
-//            System.out.println("Timeout pour le résultat de la recherche!");
-//        }
-        return page.isVisible(p);}
+        } catch (TimeoutError e) {
+            System.out.println("Timeout pour le résultat de la recherche!");
+        }
+        if(page.isVisible("text=Aucun produit trouvé"))
+            return ("Aucun_produit_trouvé");
+        else if (p.isVisible()) {
+            return ("ok");
+        }
+        else
+            return ("not_ok");
+    }
 
     public Boolean isErreurNonConnected(){
         return page.isVisible(erreurNonConnected);

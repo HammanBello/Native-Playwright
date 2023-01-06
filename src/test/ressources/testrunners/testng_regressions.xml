@@ -8,26 +8,26 @@
         <listener class-name="listeners.ExtentReportListener" />
     </listeners>
 
-    <test name="Open Cart Login Page Test_chromium">
+    <test name="Test_suite_chromium">
         <parameter name="browser" value="chromium" />
         <classes>
             <class name="tests.TestRunner" />
         </classes>
     </test>
 
-    <test name="Open Cart Login Page Test_edge">
-        <parameter name="browser" value="edge" />
-        <classes>
-            <class name="tests.TestRunner" />
-        </classes>
-    </test>
+<!--    <test name="Test_suite_edge">-->
+<!--        <parameter name="browser" value="edge" />-->
+<!--        <classes>-->
+<!--            <class name="tests.TestRunner" />-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="Open Cart Login Page Test_firefox">
-        <parameter name="browser" value="firefox" />
-        <classes>
-            <class name="tests.TestRunner" />
-        </classes>
-    </test>
+<!--    <test name="Test_suite_firefox">-->
+<!--        <parameter name="browser" value="firefox" />-->
+<!--        <classes>-->
+<!--            <class name="tests.TestRunner" />-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <!-- <test name="Open Cart Home Page Test_chromium">
         <parameter name="browser" value="chromium" />

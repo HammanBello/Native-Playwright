@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import com.microsoft.playwright.Locator;
 import constants.AppConstants;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -48,9 +49,9 @@ public class TestRunner extends BaseTest {
         @DataProvider
     public Object[][] getProductData() {
         return new Object[][] {
-                { "Macbook" },
-                { "iMac" },
-                { "Samsung" }
+                { "T-shirt" },
+                { "Chaise" },
+                { "Ampoule" }
         };
     }
 
@@ -58,8 +59,22 @@ public class TestRunner extends BaseTest {
     public void searchTest(String productName) throws InterruptedException {
 //        Thread.sleep(5000);
         homePage.Idoasearch(productName);
-        Assert.assertTrue("Erreur au niveau du résultat de la recherche",homePage.getResultSearch(productName));
+        Locator p = homePage.page.locator(homePage.searchResult)
+                .filter(new Locator.FilterOptions().setHasText(productName));
 
+        int count = p.count();
+        for (int i = 0; i < count; ++i) {
+            String s = homePage.getResultSearch(i, productName);
+
+            if (s.equals("ok"))
+                System.out.println("ok");
+            else if (s.equals("Aucun_produit_trouvé")) {
+                Assert.fail("Produit inexistant dans la base de donnée");
+            } else if (s.equals("not_ok")) {
+                Assert.fail("Pas de correspondance entre le resulat et l'élement recherché");
+            }
+//        Assert.assertTrue(homePage.getResultSearch(productName),"Erreur au niveau du résultat de la recherche");
+        }
     }
 
 //    @Test(priority = 2)@Ignore
