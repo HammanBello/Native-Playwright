@@ -1,6 +1,7 @@
 package base;
 
 import Factory.PlaywrightFactory;
+
 import Pages.HomePage;
 import Pages.LoginPage;
 import com.microsoft.playwright.Page;
@@ -15,8 +16,8 @@ public class BaseTest {
     Page page;
     protected Properties prop;
 
-    protected HomePage homePage;
-    protected LoginPage loginPage;
+    public HomePage homePage;
+    public LoginPage loginPage;
 
     @Parameters({ "browser" })
     @BeforeTest
@@ -31,6 +32,8 @@ public class BaseTest {
 
         page = pf.initBrowser(prop);
         homePage = new HomePage(page);
+        loginPage = new LoginPage(page);
+
     }
 
     @AfterTest

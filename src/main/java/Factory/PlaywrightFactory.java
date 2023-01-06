@@ -41,6 +41,12 @@ public class PlaywrightFactory {
     public Page initBrowser(Properties prop) {
 
         String browserName = prop.getProperty("browser").trim();
+        String headless = prop.getProperty("headless").trim();
+        Boolean H;
+        if (headless.equals("true"))
+            H = true;
+        else
+            H=false;
         System.out.println("browser name is : " + browserName);
 
         // playwright = Playwright.create();
@@ -48,21 +54,21 @@ public class PlaywrightFactory {
 
         switch (browserName.toLowerCase()) {
             case "chromium":
-                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(H)));
                 break;
             case "firefox":
-                tlBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                tlBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(H)));
                 break;
             case "safari":
-                tlBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                tlBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(H)));
                 break;
             case "chrome":
                 tlBrowser.set(
-                        getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false)));
+                        getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(H)));
                 break;
             case "edge":
                 tlBrowser.set(
-                        getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false)));
+                        getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(H)));
                 break;
 
             default:

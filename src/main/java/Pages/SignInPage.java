@@ -3,15 +3,18 @@ package Pages;
 
 import com.microsoft.playwright.Page;
 
-public class LoginPage {
+public class SignInPage {
 
     Page page;
 
 // Locator — — — -
 
-    String email = "id=email_login";
-    String password = "id=password_login";
-    String clickLogin = "id=btn_login";
+    String email = "id=email_register";
+    String password = "id=password_register";
+
+    String passwordConfirm = "id=confirm_password_register";
+
+    String clickRegis = "id=btn_register";
 
     String loginProof = "text=Connexion";
 
@@ -20,7 +23,7 @@ public class LoginPage {
 
 // initialize Page using constructor
 
-    public LoginPage(Page page) {
+    public SignInPage(Page page) {
         this.page = page;
 
     }
@@ -37,7 +40,8 @@ public class LoginPage {
     public void loginIntoApplication(String email, String pass) {
         enteremail(email);
         enterPassword(pass);
-        clickLoginButton();
+        enterConfirmPassword(pass);
+        clickRegisterButton();
     }
 
     public void enteremail(String mail) {
@@ -48,12 +52,16 @@ public class LoginPage {
         page.fill(password, pass);
     }
 
-    public void clickLoginButton() {
-        page.click(clickLogin);
+    public void enterConfirmPassword(String pass) {
+        page.fill(passwordConfirm, pass);
+    }
+
+
+    public void clickRegisterButton() {
+        page.click(clickRegis);
     }
 
     public String getLoginProof() {
-        page.waitForTimeout(5000);
         return page.textContent(loginProof);
     }
 
