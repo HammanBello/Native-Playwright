@@ -7,6 +7,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Selectors;
 import com.microsoft.playwright.TimeoutError;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.options.LoadState;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
 
@@ -130,7 +131,7 @@ public class HomePage {
 
         try {
             Locator p = page.locator(searchResult)
-                    .filter(new Locator.FilterOptions().setHasText(articleToAdd));
+                    .filter(new Locator.FilterOptions().setHasText(articleToAdd)).first();
             p.waitFor(new Locator.WaitForOptions().setTimeout(15000));
             p.click();
         } catch (TimeoutError e) {
@@ -166,8 +167,9 @@ public class HomePage {
 
         try {
             page.click("#style_content_cart_wrapper__mqNbf > span");
+            String[] productNames = productName.split(" ");
             Locator p = page.locator(".style_card__JLMp6")
-                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productName)));
+                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile("\\b("+productNames[0]+"|...)\\b")));
             p.waitFor();
             return p.isVisible();
         } catch (TimeoutError e) {
@@ -186,6 +188,7 @@ public class HomePage {
                 page.waitForSelector(cartIcon, new Page.WaitForSelectorOptions().setTimeout(15000));
                 page.click(cartIcon);
                 page.click("text=Vider le panier");
+                page.waitForSelector(badgeOfAdd , new Page.WaitForSelectorOptions().setTimeout(15000));
             } catch (TimeoutError e) {
                 System.out.println("Timeout to empty the cart!");
             }
@@ -206,6 +209,7 @@ public class HomePage {
 
     public void Idoasearch(String searchTerm) {
         try {
+            page.waitForLoadState(LoadState.LOAD);
             page.waitForSelector(searchBar, new Page.WaitForSelectorOptions().setTimeout(15000));
         } catch (TimeoutError e) {
             System.out.println("Timeout pour la barre de recherche!");

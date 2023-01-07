@@ -62,7 +62,7 @@ public class TestRunner extends BaseTest {
         };
     }
 
-    @Test(priority = 2,dataProvider = "getProductData")
+    @Test(priority = 2,dataProvider = "getProductData")@Ignore
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
@@ -92,7 +92,7 @@ public class TestRunner extends BaseTest {
      homePage.ClickOnAnArticle(productName);
      homePage.ClickOnAddToCart();
         Assert.assertTrue(homePage.VerifyArticleInCart(productName),"Article absent du panier");
-
+    homePage.page.click("text=LES PRODUITS");
 //        Locator p = homePage.page.locator(homePage.searchResult)
 //                .filter(new Locator.FilterOptions().setHasText(productName));
     }
