@@ -4,10 +4,7 @@ package Pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Selectors;
 import com.microsoft.playwright.TimeoutError;
-import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitUntilState;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
@@ -44,7 +41,8 @@ public class HomePage {
 
     public String searchResult = ".style_card__gNEqX";
 
-    String erreurNonConnected = "text=Connexion";
+    String handle_mouse = "id=style_avatar_wrapper__pEGIQ";
+    String logout_bouton = "text=Se déconnecter";
 
 
     String Compte ="text=Compte";
@@ -129,15 +127,17 @@ public class HomePage {
         page.click(Deco);
     }
 
-    public void ClickOnAnArticle(String articleToAdd) {
+    public Boolean ClickOnAnArticle(String articleToAdd) {
 
         try {
             Locator p = page.locator(searchResult)
                     .filter(new Locator.FilterOptions().setHasText(articleToAdd)).first();
             p.waitFor(new Locator.WaitForOptions().setTimeout(15000));
             p.click();
+            return true;
         } catch (TimeoutError e) {
             System.out.println("Timeout to click on article");
+            return false;
         }
 
     }
@@ -237,9 +237,17 @@ public class HomePage {
             return ("not_ok");
     }
 
-    public Boolean isErreurNonConnected(){
-        return page.isVisible(erreurNonConnected);
-    }
+    public void disconnect() {
+        try {
+
+        page.click(handle_mouse);
+        page.click(logout_bouton);        }
+
+        catch (TimeoutError e) {
+            Assert.fail("Impossible de cliquer sur le boutton déconnexion");
+        }
+
+        }
 
 
     public void DeleteFromCart(String s) throws InterruptedException {
@@ -248,8 +256,9 @@ public class HomePage {
             String[] productNames = s.split(" ");
             Locator p = page.locator(".style_card__JLMp6")
                     .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0])));
-            p.locator(".style_quantity_dec__nm5ig").click();
+            p.locator(".style_quantity_dec__nm5ig").click(new Locator.ClickOptions().setTimeout(3000));
         } catch (TimeoutError e) {
+            Assert.fail("Impossible de supprimer l'article");
             System.out.println("Timeout to press on reduce button!");
         }
 
