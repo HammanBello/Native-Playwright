@@ -67,7 +67,7 @@ public class HomePage {
         try {
 //            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(15000));
             page.waitForURL("**/home", new Page.WaitForURLOptions().setWaitUntil(WaitUntilState.NETWORKIDLE));
-//            page.waitForTimeout(3000);
+            page.waitForTimeout(3000);
         } catch (TimeoutError e) {
             System.out.println("Timeout!");
         }
@@ -243,7 +243,7 @@ public class HomePage {
         }
 
 
-    public void DeleteFromCart(String s) throws InterruptedException {
+    public void DeleteFromCart(String s)  {
         try {
 
             String[] productNames = s.split(" ");

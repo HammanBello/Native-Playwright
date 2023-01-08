@@ -25,7 +25,8 @@ public class TestRunner extends BaseTest {
     @DataProvider
     public Object[][] getProductData() {
         return new Object[][] {
-                { "T-shirt" }
+                { "T-shirt" },                { "xoxo" }
+
         };
     }
 
@@ -64,9 +65,9 @@ public class TestRunner extends BaseTest {
         }
     }
 
+//    @Severity(SeverityLevel.BLOCKER) can be catch up with throws InterruptedException
 
-
-    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)@Ignore
+    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)
     public void loginPageNavigationTest() {
         homePage.page.navigate(prop.getProperty("url").trim());
         try{
@@ -96,7 +97,7 @@ public class TestRunner extends BaseTest {
 
 
 
-    @Test(priority = 3,dataProvider = "getProductData")@Ignore
+    @Test(priority = 3,dataProvider = "getProductData")
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
@@ -123,7 +124,7 @@ public class TestRunner extends BaseTest {
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd")@Ignore
+    @Test(priority = 4,dataProvider = "getProductDataForAdd")
     public void addToCartTest(String productName, int X) {
         try{
      homePage.page.fill("id=style_input_navbar_search__Scaxy","", new Page.FillOptions().setTimeout(2000));}
@@ -139,8 +140,8 @@ public class TestRunner extends BaseTest {
 
     }
 
-    @Test(priority = 5,dataProvider = "getProductDataForAdd")@Ignore
-    public void suppressFromCartTest(String productName, int X) throws InterruptedException {
+    @Test(priority = 5,dataProvider = "getProductDataForAdd")
+    public void suppressFromCartTest(String productName, int X)  {
 
         homePage.ClickOnCartIcon();
         for (int i=0;i<X;i++)
@@ -150,7 +151,7 @@ public class TestRunner extends BaseTest {
 
     }
 
-    @Test(priority = 6)@Ignore
+    @Test(priority = 6)
     public void LOGOUT()  {
 
 

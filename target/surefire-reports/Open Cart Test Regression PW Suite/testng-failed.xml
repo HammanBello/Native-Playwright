@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Open Cart Test Regression PW Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="listeners.AllureReportListener"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Test_suite_chromium(failed)" verbose="0">
+    <parameter name="browser" value="chromium"/>
+    <classes>
+      <class name="tests.TestRunner">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="searchTest" invocation-numbers="1"/>
+          <include name="createNewUserTest" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- tests.TestRunner -->
+    </classes>
+  </test> <!-- Test_suite_chromium(failed) -->
+</suite> <!-- Failed suite [Open Cart Test Regression PW Suite] -->

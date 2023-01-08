@@ -77,7 +77,7 @@ public class SignInPage {
 
         try {
 //            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(15000));
-            page.waitForURL("**/home", new Page.WaitForURLOptions().setWaitUntil(WaitUntilState.NETWORKIDLE));
+            page.waitForURL("**/home", new Page.WaitForURLOptions().setWaitUntil(WaitUntilState.NETWORKIDLE).setTimeout(5000));
 //            page.waitForTimeout(3000);
         } catch (TimeoutError e) {
             System.out.println("Timeout!");

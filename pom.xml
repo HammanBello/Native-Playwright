@@ -85,22 +85,19 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.10.1</version>
-        <executions>
-          <execution>
-            <phase>integration-test</phase>
-            <configuration>
-              <argLine>
-                -javaagent:"${settings.localRepository}\org\aspectj\aspectjweaver\${aspectj.version}\aspectjweaver-${aspectj.version}.jar"
-              </argLine>
-              <testFailureIgnore>true</testFailureIgnore>
-              <suiteXFiles>
-                <file>testng_regressions.xml</file>
-              </suiteXFiles>
-              <source>8</source>
-              <target>8</target>
-            </configuration>
-          </execution>
-        </executions>
+        <!--              <source>17</source>-->
+        <!--              <target>17</target>-->
+        <configuration>
+        <annotationProcessorPaths>
+          <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+          </path>
+        </annotationProcessorPaths>
+            <source>17</source>
+            <target>17</target>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.aspectj</groupId>
@@ -110,6 +107,42 @@
         </dependencies>
 
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <executions>
+          <execution>
+            <phase>integration-test</phase>
+            <goals><goal>test</goal></goals>
+            <configuration>
+
+              <suiteXmlFiles>
+                <file>src/test/ressources/testrunners/testng_regressions.xml</file>
+                <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
+              </suiteXmlFiles>
+                            <argLine>
+                              -javaagent:"${settings.localRepository}\org\aspectj\aspectjweaver\${aspectj.version}\aspectjweaver-${aspectj.version}.jar"
+                            </argLine>
+                            <testFailureIgnore>true</testFailureIgnore>
+
+            </configuration>
+          </execution>
+        </executions>
+
+        <configuration>
+          <suiteXmlFiles>
+            <file>src/test/ressources/testrunners/testng_regressions.xml</file>
+            <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
+          </suiteXmlFiles>
+          <testFailureIgnore>true</testFailureIgnore>
+
+
+
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 

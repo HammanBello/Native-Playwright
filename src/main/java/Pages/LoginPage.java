@@ -5,6 +5,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.TimeoutError;
 import org.testng.Assert;
 
+
 public class LoginPage {
 
     Page page;
@@ -15,7 +16,6 @@ public class LoginPage {
     String password = "id=password_login";
     String clickLogin = "id=btn_login";
 
-    String loginProof = "text=Connexion";
 
 
 
@@ -27,10 +27,7 @@ public class LoginPage {
 
     }
 
-    public String verifyTitle() {
-        String title = page.title();
-        return title;
-    }
+
 
 //Create methods
 
@@ -58,9 +55,6 @@ public class LoginPage {
         page.click(clickLogin);
     }
 
-    public String getLoginProof() {
-        page.waitForTimeout(5000);
-        return page.textContent(loginProof);
-    }
+
 
 }
