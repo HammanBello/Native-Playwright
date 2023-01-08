@@ -63,7 +63,7 @@ public class TestRunner extends BaseTest {
         loginPage.loginIntoApplication(prop.getProperty("username").trim(), prop.getProperty("password").trim());
         String s = homePage.getSiteLogoVision();
         homePage.emptyTheCart();
-        
+
         switch (s) {
             case "ok":
                 System.out.println("ok");
