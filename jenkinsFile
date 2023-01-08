@@ -29,7 +29,7 @@ pipeline
                 stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    ( returnStatus: false, script: "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml")
+                     cpy_apks_status = ( returnStatus: true, script: "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml")
 
                 }
             }
