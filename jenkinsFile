@@ -11,10 +11,19 @@ pipeline
     {
 
                 
-        stage('Regression Automation Test') {
+        stage('Gitt') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    git 'https://github.com/HammanBello/Native-Playwright.git'
+                    
+                }
+            }
+        }
+
+                stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/HammanBello/Native-Playwright.git'
+                
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml"
                     
                 }
