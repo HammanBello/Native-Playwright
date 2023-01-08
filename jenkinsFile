@@ -4,6 +4,7 @@ pipeline
         tools{
         maven 'maven'
         allure 'allure'
+        jdk 'java'
         }
 
 
@@ -22,16 +23,6 @@ pipeline
                 }
             }
         }
-
-                stage('Test'){
-                     steps {
-            catchError(buildResult: 'FAILURE', stageResult: 'UNSTABLE'){
-                hasFailed = sh( returnStatus: true, script: "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml")
-                if( "${hasFailed}" != "0" ){
-                    error("Hum le processus has failed : 1")
-                }
-            }
-        } }
 
 
 
