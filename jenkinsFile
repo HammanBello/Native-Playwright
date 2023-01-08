@@ -14,7 +14,10 @@ pipeline
         stage('Gitt') {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                    git 'https://github.com/HammanBello/Native-Playwright.git'
+
+                                git branch: "main",
+                                    url: "https://github.com/HammanBello/Native-Playwright.git"
+             
                     
                 }
             }
