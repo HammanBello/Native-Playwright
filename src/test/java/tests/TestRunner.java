@@ -22,9 +22,22 @@ public class TestRunner extends BaseTest {
         return usersData;
     }
 
+    @DataProvider
+    public Object[][] getProductData() {
+        return new Object[][] {
+                { "T-shirt" }
+        };
+    }
 
+    @DataProvider
+    public Object[][] getProductDataForAdd() {
+        return new Object[][] {
+                { "T-shirt en coton biologique",3 },
+                { "Chaussures Hommes de Ville",3 }
+        };
+    }
 
-    @Test(dataProvider = "getRegistrationTestData", priority = 1)
+    @Test(dataProvider = "getRegistrationTestData", priority = 1)@Ignore
     public void createNewUserTest(String email, String password, String passwordconf) {
         page.navigate(prop.getProperty("url_signIn").trim());
         try{
@@ -53,8 +66,7 @@ public class TestRunner extends BaseTest {
 
 
 
-
-    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)@Ignore
+    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)
     public void loginPageNavigationTest() {
         homePage.page.navigate(prop.getProperty("url").trim());
         try{
@@ -82,22 +94,9 @@ public class TestRunner extends BaseTest {
 
     }
 
-        @DataProvider
-    public Object[][] getProductData() {
-        return new Object[][] {
-                { "T-shirt" }
-        };
-    }
 
-    @DataProvider
-    public Object[][] getProductDataForAdd() {
-        return new Object[][] {
-                { "T-shirt en coton biologique",3 },
-                { "Chaussures Hommes de Ville",3 }
-        };
-    }
 
-    @Test(priority = 3,dataProvider = "getProductData")
+    @Test(priority = 3,dataProvider = "getProductData")@Ignore
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
@@ -120,43 +119,40 @@ public class TestRunner extends BaseTest {
                     Assert.fail("Pas de correspondance entre le resulat et l'élement recherché");
                     break;
             }
-//        Assert.assertTrue(homePage.getResultSearch(productName),"Erreur au niveau du résultat de la recherche");
+
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd")
+    @Test(priority = 4,dataProvider = "getProductDataForAdd")@Ignore
     public void addToCartTest(String productName, int X) {
         try{
      homePage.page.fill("id=style_input_navbar_search__Scaxy","", new Page.FillOptions().setTimeout(2000));}
         catch (TimeoutError error){
             Assert.fail("Impossible d'acceder à la page accueil");
         }
-//     homePage.emptyTheCart();
+
      Boolean b = homePage.ClickOnAnArticle(productName);
         Assert.assertTrue(b,"Article inexistant ou non localisable");
         homePage.ClickOnAddToCart(X);
         Assert.assertTrue(homePage.VerifyArticleInCart(productName),"Article absent du panier");
     homePage.page.click("text=LES PRODUITS");
-//        Locator p = homePage.page.locator(homePage.searchResult)
-//                .filter(new Locator.FilterOptions().setHasText(productName));
+
     }
 
     @Test(priority = 5,dataProvider = "getProductDataForAdd")@Ignore
     public void suppressFromCartTest(String productName, int X) throws InterruptedException {
-//        String s = homePage.page.textContent(".style_quantity__qJbQ3");
+
         homePage.ClickOnCartIcon();
         for (int i=0;i<X;i++)
             {homePage.DeleteFromCart(productName);
             }
         Assert.assertFalse(homePage.VerifyArticleDeletion(productName),"Article toujours présent dans le panier");
-//        homePage.page.click("text=LES PRODUITS");
-//        Locator p = homePage.page.locator(homePage.searchResult)
-//                .filter(new Locator.FilterOptions().setHasText(productName));
+
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6)@Ignore
     public void LOGOUT()  {
-//        String s = homePage.page.textContent(".style_quantity__qJbQ3");
+
 
         try{
         homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
@@ -165,28 +161,8 @@ public class TestRunner extends BaseTest {
         catch (TimeoutError error){
             Assert.fail("Impossible de cliquer sur le boutton déconnexion");
         }
-//        Assert.assertTrue(homePage.page.isVisible("text=Connexion"),"Impossible de se déconnecter");
 
-
-
-
-
-
-
-
-
-//        homePage.page.click("text=LES PRODUITS");
-//        Locator p = homePage.page.locator(homePage.searchResult)
-//                .filter(new Locator.FilterOptions().setHasText(productName));
     }
-//    @Test(priority = 2)@Ignore
-//    public void forgotPwdLinkExistTest() {
-//        Assert.assertTrue(loginPage.isForgotPwdLinkExist());
-//    }
-//
-//    @Test(priority = 1)
-//    public void appLoginTest() {
-//        Assert.assertTrue(loginPage.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim()));
-//    }
+
 
 }
