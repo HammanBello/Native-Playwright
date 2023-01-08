@@ -15,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.regex.Pattern;
 
-import static com.microsoft.playwright.options.LoadState.NETWORKIDLE;
+import static com.microsoft.playwright.options.LoadState.*;
 
 public class HomePage {
 
@@ -198,12 +198,16 @@ public class HomePage {
 
     public void Idoasearch(String searchTerm) {
         try {
-            page.waitForLoadState(NETWORKIDLE);
-            page.waitForSelector(searchBar, new Page.WaitForSelectorOptions().setTimeout(15000));
+            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(9000));
+            page.waitForLoadState(DOMCONTENTLOADED);
+            page.waitForTimeout(2000);
+            page.waitForLoadState();
+
+            page.fill(searchBar, searchTerm);
         } catch (TimeoutError e) {
             System.out.println("Timeout pour la barre de recherche!");
         }
-        page.fill(searchBar, searchTerm);}
+        }
 
     public String getResultSearch(int x, String searchedTerms) {
         Locator p = page.locator(searchResult)

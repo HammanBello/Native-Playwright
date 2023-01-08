@@ -63,6 +63,7 @@ public class TestRunner extends BaseTest {
         loginPage.loginIntoApplication(prop.getProperty("username").trim(), prop.getProperty("password").trim());
         String s = homePage.getSiteLogoVision();
         homePage.emptyTheCart();
+        
         switch (s) {
             case "ok":
                 System.out.println("ok");
@@ -96,7 +97,7 @@ public class TestRunner extends BaseTest {
         };
     }
 
-    @Test(priority = 3,dataProvider = "getProductData")@Ignore
+    @Test(priority = 3,dataProvider = "getProductData")
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)

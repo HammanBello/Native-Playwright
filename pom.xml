@@ -85,7 +85,7 @@
           <execution>
             <phase>integration-test</phase>
             <goals>
-<!--              <goal>Test</goal>-->
+<!--              <goal>Tests</goal>-->
             </goals>
             <configuration>
               <argLine>
