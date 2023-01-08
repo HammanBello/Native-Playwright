@@ -13,8 +13,8 @@
   <properties>
     <aspectj.version>1.8.10</aspectj.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <extentreports-version>5.0.8</extentreports-version>
   </properties>
 
@@ -44,11 +44,14 @@
       <artifactId>allure-environment-writer</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <dependency>
-      <groupId>com.withplum</groupId>
-      <artifactId>emojiBottomSheetDialog</artifactId>
-      <version>2.0.0</version>
-    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.withplum/emojiBottomSheetDialog -->
+<!--    <dependency>-->
+<!--      <groupId>com.withplum</groupId>-->
+<!--      <artifactId>emojiBottomSheetDialog</artifactId>-->
+<!--      <version>2.0.0</version>-->
+<!--    </dependency>-->
+
 
 
 <!--    <dependency>-->
@@ -62,7 +65,7 @@
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
-      <version>3.9</version>
+      <version>4.1.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
@@ -75,18 +78,16 @@
 
   </dependencies>
 
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
         <executions>
           <execution>
             <phase>integration-test</phase>
-            <goals>
-<!--              <goal>Tests</goal>-->
-            </goals>
             <configuration>
               <argLine>
                 -javaagent:"${settings.localRepository}\org\aspectj\aspectjweaver\${aspectj.version}\aspectjweaver-${aspectj.version}.jar"
@@ -95,6 +96,8 @@
               <suiteXFiles>
                 <file>testng_regressions.xml</file>
               </suiteXFiles>
+              <source>8</source>
+              <target>8</target>
             </configuration>
           </execution>
         </executions>
@@ -105,7 +108,39 @@
             <version>${aspectj.version}</version>
           </dependency>
         </dependencies>
+
       </plugin>
     </plugins>
   </build>
+
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--        <version>2.20</version>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <phase>integration-test</phase>-->
+<!--            <configuration>-->
+<!--              <argLine>-->
+<!--                -javaagent:"${settings.localRepository}\org\aspectj\aspectjweaver\${aspectj.version}\aspectjweaver-${aspectj.version}.jar"-->
+<!--              </argLine>-->
+<!--              <testFailureIgnore>true</testFailureIgnore>-->
+<!--              <suiteXFiles>-->
+<!--                <file>testng_regressions.xml</file>-->
+<!--              </suiteXFiles>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--        <dependencies>-->
+<!--          <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjweaver</artifactId>-->
+<!--            <version>${aspectj.version}</version>-->
+<!--          </dependency>-->
+<!--        </dependencies>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </build>-->
 </project>

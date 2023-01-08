@@ -56,8 +56,6 @@ public class TestUtil {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (org.apache.poi.openxml4j.exceptions.InvalidFormatException e) {
-            throw new RuntimeException(e);
         }
 
         sheet = book.getSheet(sheetName);

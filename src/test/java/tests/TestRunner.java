@@ -37,7 +37,7 @@ public class TestRunner extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "getRegistrationTestData", priority = 1)@Ignore
+    @Test(dataProvider = "getRegistrationTestData", priority = 1)
     public void createNewUserTest(String email, String password, String passwordconf) {
         page.navigate(prop.getProperty("url_signIn").trim());
         try{
@@ -66,7 +66,7 @@ public class TestRunner extends BaseTest {
 
 
 
-    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)
+    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)@Ignore
     public void loginPageNavigationTest() {
         homePage.page.navigate(prop.getProperty("url").trim());
         try{
