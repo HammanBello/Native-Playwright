@@ -2,17 +2,29 @@ package Pages;
 
 
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.TimeoutError;
+import com.microsoft.playwright.options.WaitUntilState;
+import org.testng.Assert;
 
 public class SignInPage {
 
-    Page page;
+    public Page page;
 
 // Locator — — — -
+    String siteLogo ="id=style_header_home__8t_ie";
 
-    String email = "id=email_register";
-    String password = "id=password_register";
+    String usedIDs = "text=Cet utilisateur existe déjà";
 
-    String passwordConfirm = "id=confirm_password_register";
+    String shortPswd = "text=Le mot de passe doit avoir au moins 8 caractères";
+
+    String samePswds = "text=Les deux mots de passe ne sont pas identiques";
+
+    String invalidIDs = "text=Le format de l'email est invalid";
+    String emailSignIn = "id=email_register";
+
+    String passwordSignIn = "id=password_register";
+
+    String passwordConfirmSignIn = "id=confirm_password_register";
 
     String clickRegis = "id=btn_register";
 
@@ -27,42 +39,65 @@ public class SignInPage {
         this.page = page;
 
     }
-
-    public String verifyTitle() {
-        String title = page.title();
-        return title;
-    }
-
 //Create methods
 
 // Login into the application
 
-    public void loginIntoApplication(String email, String pass) {
-        enteremail(email);
-        enterPassword(pass);
-        enterConfirmPassword(pass);
-        clickRegisterButton();
+    public void signinIntoApplication(String email, String pass, String passwordConfirm) {
+        try{
+            enteremail(email);
+            enterPassword(pass);
+            enterPasswordConf(passwordConfirm);
+            clickRegisButton();}
+        catch (TimeoutError error){
+            Assert.fail("Impossible de remplir les champs");
+        }
     }
 
     public void enteremail(String mail) {
-        page.fill(email, mail);
+        page.fill(emailSignIn, mail);
     }
 
     public void enterPassword(String pass) {
-        page.fill(password, pass);
+        page.fill(passwordConfirmSignIn, pass);
+
     }
 
-    public void enterConfirmPassword(String pass) {
-        page.fill(passwordConfirm, pass);
+    public void enterPasswordConf(String pass) {
+        page.fill(passwordSignIn, pass);
+
     }
 
-
-    public void clickRegisterButton() {
+    public void clickRegisButton() {
         page.click(clickRegis);
     }
 
-    public String getLoginProof() {
-        return page.textContent(loginProof);
-    }
+    public String getSiteLogoVision() {
+//        page.waitForTimeout(10000);
 
+        try {
+//            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(15000));
+            page.waitForURL("**/home", new Page.WaitForURLOptions().setWaitUntil(WaitUntilState.NETWORKIDLE));
+//            page.waitForTimeout(3000);
+        } catch (TimeoutError e) {
+            System.out.println("Timeout!");
+        }
+
+        if (page.isVisible(invalidIDs))
+            return  ("invalidIDs");
+        else{
+            if (page.isVisible(siteLogo))
+                return  ("ok");
+            else{
+                if (page.isVisible(usedIDs))
+                    return  ("used_IDs");
+                else if (page.isVisible(shortPswd)) {return  ("short_Pswd");}
+                else if (page.isVisible(samePswds)) {return  ("same_Pswds");}
+                else return ("no_logo_seen");
+
+            }
+//            else
+//            return ("no_logo_seen");
+        }
+    }
 }

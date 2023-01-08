@@ -6,6 +6,7 @@
 
     <listeners>
         <listener class-name="listeners.ExtentReportListener" />
+        <listener class-name="listeners.AllureReportListener" />
     </listeners>
 
     <test name="Test_suite_chromium">

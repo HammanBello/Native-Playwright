@@ -22,7 +22,8 @@ public class HomePage {
     public Page page;
 
 // Locator — — — -
-    String usedIDs = "text=Cet utilisateur existe déjà";
+
+
 
     String incorrectIDs = "text=Email ou mot de passe incorrect";
     String siteLogo ="id=style_header_home__8t_ie";
@@ -58,74 +59,62 @@ public class HomePage {
 
 //Method
 
-    public String productName() {
 
-        String productName = page.textContent(siteLogo);
-
-        return productName;}
-
-    public String getProductName() {
-        String productName = page.textContent(siteLogo);
-
-        return productName;
-    }
 
     public String getSiteLogoVision() {
 //        page.waitForTimeout(10000);
 
         try {
-            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(15000));
+//            page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(15000));
             page.waitForURL("**/home", new Page.WaitForURLOptions().setWaitUntil(WaitUntilState.NETWORKIDLE));
 //            page.waitForTimeout(3000);
         } catch (TimeoutError e) {
             System.out.println("Timeout!");
         }
+
         if (page.isVisible(incorrectIDs))
             return  ("wrong_IDs");
         else{
         if (page.isVisible(siteLogo))
             return  ("ok");
         else{
-            if (page.isVisible(usedIDs))
-                return  ("used_IDs");
-            else
-            return ("no_logo_seen");
+             return ("no_logo_seen");
 
+        }
+//            else
+//            return ("no_logo_seen");
         }
         }
 
 
 
-    }
 
+//    public void takeScreenshot() {
+//        Allure.addAttachment("screenshot", new ByteArrayInputStream(page.screenshot()));
+//    }
+//
+//    public void takeScreenVideoCapture() {
+//
+//
+//        byte[] byteArr = new byte[0];
+//        try {
+//            Path path = page.video().path();
+//            // file to byte[], Path
+//            byteArr = Files.readAllBytes(path);
+//            Allure.addAttachment("Video", "video/mp4", new ByteArrayInputStream(byteArr), "mp4");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
-
-    public void takeScreenshot() {
-        Allure.addAttachment("screenshot", new ByteArrayInputStream(page.screenshot()));
-    }
-
-    public void takeScreenVideoCapture() {
-
-
-        byte[] byteArr = new byte[0];
-        try {
-            Path path = page.video().path();
-            // file to byte[], Path
-            byteArr = Files.readAllBytes(path);
-            Allure.addAttachment("Video", "video/mp4", new ByteArrayInputStream(byteArr), "mp4");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void ClickOnDisconnect(){
-        page.waitForSelector(siteLogo);
-        page.hover(Compte);
-        page.click(Compte);
-        page.waitForSelector(Deco);
-        page.click(Deco);
-    }
+//    public void ClickOnDisconnect(){
+//        page.waitForSelector(siteLogo);
+//        page.hover(Compte);
+//        page.click(Compte);
+//        page.waitForSelector(Deco);
+//        page.click(Deco);
+//    }
 
     public Boolean ClickOnAnArticle(String articleToAdd) {
 
@@ -154,18 +143,18 @@ public class HomePage {
             System.out.println("Timeout to click on article");
         }
     }
+//
+//    public String VerifyNotification(){
+//        page.waitForSelector(notifOfAdd);
+//        return page.textContent(notifOfAdd);
+//
+//
+//    }
 
-    public String VerifyNotification(){
-        page.waitForSelector(notifOfAdd);
-        return page.textContent(notifOfAdd);
-
-
-    }
-
-    public String VerifyBadge() {
-        page.waitForSelector(badgeOfAdd);
-        return page.textContent(badgeOfAdd);
-    }
+//    public String VerifyBadge() {
+//        page.waitForSelector(badgeOfAdd);
+//        return page.textContent(badgeOfAdd);
+//    }
 
     public Boolean VerifyArticleInCart(String productName) {
 
@@ -293,5 +282,7 @@ public class HomePage {
             return (false);
 
     }
+
+
 }
 

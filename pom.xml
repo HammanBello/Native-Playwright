@@ -39,7 +39,31 @@
       <version>7.7.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.github.automatedowl</groupId>
+      <artifactId>allure-environment-writer</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.withplum</groupId>
+      <artifactId>emojiBottomSheetDialog</artifactId>
+      <version>2.0.0</version>
+    </dependency>
 
+
+<!--    <dependency>-->
+<!--      <groupId>cookbook-storm-project</groupId>-->
+<!--      <artifactId>lein-template</artifactId>-->
+<!--      <version>0.2.0</version>-->
+<!--    </dependency>-->
+
+
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>3.9</version>
+    </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
     <dependency>

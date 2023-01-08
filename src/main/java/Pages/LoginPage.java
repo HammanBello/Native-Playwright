@@ -2,6 +2,8 @@ package Pages;
 
 
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.TimeoutError;
+import org.testng.Assert;
 
 public class LoginPage {
 
@@ -35,9 +37,13 @@ public class LoginPage {
 // Login into the application
 
     public void loginIntoApplication(String email, String pass) {
+        try{
         enteremail(email);
         enterPassword(pass);
-        clickLoginButton();
+        clickLoginButton();}
+        catch (TimeoutError error){
+            Assert.fail("Impossible de remplir les champs");
+        }
     }
 
     public void enteremail(String mail) {
