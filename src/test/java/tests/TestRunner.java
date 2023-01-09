@@ -70,7 +70,7 @@ public class TestRunner extends BaseTest {
 //    @Severity(SeverityLevel.BLOCKER) can be catch up with throws InterruptedException
 
     @Test(priority = 2,retryAnalyzer = Retry.class) @Severity(SeverityLevel.BLOCKER)
-    public void loginPageNavigationTest()throws InterruptedException {
+    public void loginPageNavigationTest(){
         try{
             homePage.page.navigate(prop.getProperty("url").trim(), new Page.NavigateOptions());
             homePage.page.waitForURL(prop.getProperty("url").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
