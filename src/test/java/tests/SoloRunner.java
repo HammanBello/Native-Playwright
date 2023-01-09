@@ -46,9 +46,9 @@ public class SoloRunner extends BaseTest {
 
     @Test(dataProvider = "getRegistrationTestData", priority = 1)
     public void createNewUserTest(String email, String password, String passwordconf) {
-        page.navigate(prop.getProperty("url_signIn").trim());
 
         try{
+            page.navigate(prop.getProperty("url_signIn").trim());
             signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
         catch (TimeoutError ignored){}
         signInPage.signinIntoApplication(email, password, passwordconf);
@@ -79,7 +79,7 @@ public class SoloRunner extends BaseTest {
         try{
             homePage.page.navigate(prop.getProperty("url").trim(), new Page.NavigateOptions());
             homePage.page.waitForURL(prop.getProperty("url").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (TimeoutError ignored){
+        catch (TimeoutError error){
             Assert.fail("Impossible d'acceder à la page de login");
         }
         loginPage.loginIntoApplication(mail, psswd);
@@ -107,11 +107,15 @@ public class SoloRunner extends BaseTest {
 
 
     @Test(priority = 3,dataProvider = "getProductData")
-    public void searchTest(String productName)  {
+    public void searchTest(String productName) {
+      try{  loginPageNavigationTest();
         homePage.Idoasearch(productName);
+    }
+          catch (TimeoutError error){
+            Assert.fail("Impossible d'acceder à la page accueil");
+        }
         Locator p = homePage.page.locator(homePage.searchResult)
                 .filter(new Locator.FilterOptions().setHasText(productName));
-
         int count = p.count();
         if (count  == 0 )
             count++;
@@ -138,7 +142,7 @@ public class SoloRunner extends BaseTest {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
         try{
-
+            loginPageNavigationTest();
             homePage.page.fill("id=style_input_navbar_search__Scaxy","", new Page.FillOptions().setTimeout(2000));}
         catch (TimeoutError error){
             Assert.fail("Impossible d'acceder à la page accueil");
@@ -154,6 +158,7 @@ public class SoloRunner extends BaseTest {
 
     @Test(priority = 5,dataProvider = "getProductDataForAdd")
     public void suppressFromCartTest(String productName, String quantity)  {
+        addToCartTest(productName,quantity);
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
         homePage.ClickOnCartIcon();
@@ -167,7 +172,7 @@ public class SoloRunner extends BaseTest {
     @Test(priority = 6)
     public void LOGOUT()  {
 
-
+        loginPageNavigationTest();
         try{
             homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
             homePage.disconnect();

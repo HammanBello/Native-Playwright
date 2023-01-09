@@ -5,6 +5,7 @@ package Pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.TimeoutError;
+import com.microsoft.playwright.options.WaitForSelectorState;
 import com.microsoft.playwright.options.WaitUntilState;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
@@ -163,7 +164,7 @@ public class HomePage {
             String[] productNames = productName.split(" ");
             Locator p = page.locator(".style_card__JLMp6")
                     .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0]))).first();
-            p.waitFor();
+            p.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(5000));
             return p.isVisible();
         } catch (TimeoutError e) {
             System.out.println("Timeout when looking in cart!");
@@ -206,6 +207,7 @@ public class HomePage {
             page.fill(searchBar, searchTerm);
         } catch (TimeoutError e) {
             System.out.println("Timeout pour la barre de recherche!");
+            Assert.fail("Impossible de faire la recherche");
         }
         }
 
