@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import static base.BaseTest.dataSheet;
+
 public class TestUtil {
 
     public static Workbook book;
@@ -45,7 +47,11 @@ public class TestUtil {
     public static Object[][] getTestData(String sheetName){
         FileInputStream file = null;
         try {
-            file = new FileInputStream(AppConstants.TESTDATA_SHEET_PATH);
+            if(!dataSheet.isEmpty())
+                file = new FileInputStream("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/src/test/java/testdata/"+dataSheet+".xlsx");
+            else
+                 file = new FileInputStream(AppConstants.TESTDATA_SHEET_PATH);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,6 +70,7 @@ public class TestUtil {
 
         for(int i=0; i<sheet.getLastRowNum(); i++){
             for(int k=0; k<sheet.getRow(0).getLastCellNum(); k++){
+//                if (data[i][k].equals(1))
                 data[i][k] = sheet.getRow(i+1).getCell(k).toString();
             }
         }

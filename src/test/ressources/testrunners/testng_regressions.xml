@@ -11,9 +11,9 @@
 
     <test name="Test_suite_chromium">
         <parameter name="browser" value="chromium" />
-        <parameter name="mail" value="gnanteffezez@gmail.com" />
-        <parameter name="psswd" value="gnanteffezez@gmail.com" />
-        <parameter name="datasheet" value="test" />
+        <parameter name="mail" value="TESTEUR@gmail.com" />
+        <parameter name="psswd" value="douuuuuuu" />
+        <parameter name="datasheet" value="datasource" />
         <classes>
             <class name="tests.TestRunner" />
         </classes>

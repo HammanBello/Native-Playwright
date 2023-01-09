@@ -11,35 +11,37 @@ import listeners.Retry;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import static java.lang.Float.parseFloat;
 
 
 public class TestRunner extends BaseTest {
 
+//    public TestRunner(String browserName, String email, String pwd, @Optional String sheet) {
+//        beforeTest(browserName,email,pwd,sheet);
+//    }
+
     @DataProvider(name = "getRegistrationTestData")
     public Object[][] getRegistrationTestData() {
         String s = AppConstants.CONTACTS_SHEET_NAME;
-        if (!dataSheet.isEmpty())
-            s = dataSheet;
         Object usersData[][] = TestUtil.getTestData(s);
         return usersData;
     }
 
     @DataProvider
     public Object[][] getProductData() {
-        return new Object[][] {
-                { "T-shirt" }
-
-        };
+        String s = AppConstants.ARTICLES_SHEET_NAME;
+        Object usersData[][] = TestUtil.getTestData(s);
+        return usersData;
     }
 
     @DataProvider
     public Object[][] getProductDataForAdd() {
-        return new Object[][] {
-                { "T-shirt en coton biologique",3 },
-                { "Chaussures Hommes de Ville",3 }
-        };
+        String s = AppConstants.ADDARTICLES_SHEET_NAME;
+        Object usersData[][] = TestUtil.getTestData(s);
+        return usersData;
     }
 
     @Test(dataProvider = "getRegistrationTestData", priority = 1)
@@ -132,8 +134,11 @@ public class TestRunner extends BaseTest {
     }
 
     @Test(priority = 4,dataProvider = "getProductDataForAdd")
-    public void addToCartTest(String productName, int X) {
+    public void addToCartTest(String productName, String quantity) {
+        float Z = parseFloat(quantity);
+        int X = Math.round(Z)  ;
         try{
+
      homePage.page.fill("id=style_input_navbar_search__Scaxy","", new Page.FillOptions().setTimeout(2000));}
         catch (TimeoutError error){
             Assert.fail("Impossible d'acceder à la page accueil");
@@ -148,8 +153,9 @@ public class TestRunner extends BaseTest {
     }
 
     @Test(priority = 5,dataProvider = "getProductDataForAdd")
-    public void suppressFromCartTest(String productName, int X)  {
-
+    public void suppressFromCartTest(String productName, String quantity)  {
+        float Z = parseFloat(quantity);
+        int X = Math.round(Z)  ;
         homePage.ClickOnCartIcon();
         for (int i=0;i<X;i++)
             {homePage.DeleteFromCart(productName);

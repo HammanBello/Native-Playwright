@@ -32,7 +32,7 @@ public class BaseTest {
 
     public String mail;
 
-    public String dataSheet;
+    public static String dataSheet;
     public String psswd;
 
     @Parameters({ "browser", "mail","psswd", "datasheet"})

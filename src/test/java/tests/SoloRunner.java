@@ -7,55 +7,87 @@ import com.microsoft.playwright.TimeoutError;
 import constants.AppConstants;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import listeners.Retry;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import static java.lang.Float.parseFloat;
 
 
 public class SoloRunner extends BaseTest {
 
+//    public TestRunner(String browserName, String email, String pwd, @Optional String sheet) {
+//        beforeTest(browserName,email,pwd,sheet);
+//    }
+
     @DataProvider(name = "getRegistrationTestData")
     public Object[][] getRegistrationTestData() {
-        Object usersData[][] = TestUtil.getTestData(AppConstants.CONTACTS_SHEET_NAME);
+        String s = AppConstants.CONTACTS_SHEET_NAME;
+        Object usersData[][] = TestUtil.getTestData(s);
         return usersData;
     }
 
     @DataProvider
     public Object[][] getProductData() {
-        return new Object[][] {
-                { "T-shirt" },                { "xoxo" }
-
-        };
+        String s = AppConstants.ARTICLES_SHEET_NAME;
+        Object usersData[][] = TestUtil.getTestData(s);
+        return usersData;
     }
 
     @DataProvider
     public Object[][] getProductDataForAdd() {
-        return new Object[][] {
-                { "T-shirt en coton biologique",3 },
-                { "Chaussures Hommes de Ville",3 }
-        };
+        String s = AppConstants.ADDARTICLES_SHEET_NAME;
+        Object usersData[][] = TestUtil.getTestData(s);
+        return usersData;
     }
 
-    @Test(dataProvider = "getRegistrationTestData", priority = 1)@Severity(SeverityLevel.NORMAL)
+    @Test(dataProvider = "getRegistrationTestData", priority = 1)
     public void createNewUserTest(String email, String password, String passwordconf) {
+        page.navigate(prop.getProperty("url_signIn").trim());
 
+        try{
+            signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
+        catch (TimeoutError ignored){}
+        signInPage.signinIntoApplication(email, password, passwordconf);
+        String s = signInPage.getSiteLogoVision();
+        switch (s) {
+            case "ok":
+                System.out.println("ok");
+                break;
+            case "no_logo_seen":
+                Assert.fail("Impossible d'acceder à la page Home");
+                break;
+            case "used_IDs":
+                Assert.fail("L'utilisateur existe déjà");
+            case "short_Pswd":
+                Assert.fail("Mot de passe trop court");
+            case "same_Pswds":
+                Assert.fail("Les mot de passe ne correspondent pas");
+            case "invalidIDs":
+                Assert.fail("L'adresse mail n'a pas un format valide");
+                break;
+        }
     }
 
 //    @Severity(SeverityLevel.BLOCKER) can be catch up with throws InterruptedException
 
-    @Test(priority = 2) @Severity(SeverityLevel.BLOCKER)
-    public void loginPageNavigationTest() {
-        homePage.page.navigate(prop.getProperty("url").trim());
+    @Test(priority = 2,retryAnalyzer = Retry.class) @Severity(SeverityLevel.BLOCKER)
+    public void loginPageNavigationTest(){
         try{
+            homePage.page.navigate(prop.getProperty("url").trim(), new Page.NavigateOptions());
             homePage.page.waitForURL(prop.getProperty("url").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (TimeoutError ignored){}
-        loginPage.loginIntoApplication(prop.getProperty("username").trim(), prop.getProperty("password").trim());
+        catch (TimeoutError ignored){
+            Assert.fail("Impossible d'acceder à la page de login");
+        }
+        loginPage.loginIntoApplication(mail, psswd);
         String s = homePage.getSiteLogoVision();
-        homePage.emptyTheCart();
 
         switch (s) {
             case "ok":
+                homePage.emptyTheCart();
                 System.out.println("ok");
                 break;
             case "wrong_IDs":
@@ -74,7 +106,7 @@ public class SoloRunner extends BaseTest {
 
 
 
-    @Test(priority = 3,dataProvider = "getProductData")@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 3,dataProvider = "getProductData")
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
@@ -101,9 +133,12 @@ public class SoloRunner extends BaseTest {
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.NORMAL)
-    public void addToCartTest(String productName, int X) {
+    @Test(priority = 4,dataProvider = "getProductDataForAdd")
+    public void addToCartTest(String productName, String quantity) {
+        float Z = parseFloat(quantity);
+        int X = Math.round(Z)  ;
         try{
+
             homePage.page.fill("id=style_input_navbar_search__Scaxy","", new Page.FillOptions().setTimeout(2000));}
         catch (TimeoutError error){
             Assert.fail("Impossible d'acceder à la page accueil");
@@ -117,9 +152,10 @@ public class SoloRunner extends BaseTest {
 
     }
 
-    @Test(priority = 5,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.NORMAL)
-    public void suppressFromCartTest(String productName, int X)  {
-
+    @Test(priority = 5,dataProvider = "getProductDataForAdd")
+    public void suppressFromCartTest(String productName, String quantity)  {
+        float Z = parseFloat(quantity);
+        int X = Math.round(Z)  ;
         homePage.ClickOnCartIcon();
         for (int i=0;i<X;i++)
         {homePage.DeleteFromCart(productName);
@@ -128,7 +164,7 @@ public class SoloRunner extends BaseTest {
 
     }
 
-    @Test(priority = 6)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 6)
     public void LOGOUT()  {
 
 
