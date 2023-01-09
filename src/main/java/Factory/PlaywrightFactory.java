@@ -17,6 +17,8 @@ public class PlaywrightFactory {
     Page page;
     Properties prop;
 
+
+    public static int i;
     private static ThreadLocal<Browser> tlBrowser = new ThreadLocal<>();
     private static ThreadLocal<BrowserContext> tlBrowserContext = new ThreadLocal<>();
     private static ThreadLocal<Page> tlPage = new ThreadLocal<>();
@@ -72,12 +74,16 @@ public class PlaywrightFactory {
                 break;
 
             default:
-                System.out.println("please pass the right browser name......");
+                tlBrowser.set(
+                        getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(H)));
                 break;
         }
 
-        tlBrowserContext.set(getBrowser().newContext());
+        tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions()
+                .setRecordVideoDir(Paths.get("target/videos/"))
+                .setRecordVideoSize(1080, 720)));
         tlPage.set(getBrowserContext().newPage());
+        getBrowserContext().tracing().start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true));
         getPage().navigate(prop.getProperty("url").trim());
         return getPage();
 

@@ -8,7 +8,7 @@ import io.qameta.allure.Attachment;
 import org.testng.*;
 import java.io.ByteArrayInputStream;
 import java.nio.file.Paths;
-
+import java.util.Date;
 
 
 public class AllureReportListener implements ITestListener {
@@ -54,6 +54,7 @@ public class AllureReportListener implements ITestListener {
     @Override
     public void onFinish(ITestContext iTestContext) {
         System.out.println("I am in onFinish method " + iTestContext.getName());
+
     }
 
     @Override
@@ -64,6 +65,8 @@ public class AllureReportListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
+        Allure.addAttachment("Données supplémentaires: ", String.valueOf("Heure de fin du test "+ new Date().toString()));
+
     }
 
     @Override
@@ -78,11 +81,15 @@ public class AllureReportListener implements ITestListener {
         }
         // Save a log on allure.
         saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
+        Allure.addAttachment("Données supplémentaires: ", String.valueOf("Heure de fin du test "+ new Date().toString()));
+
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
         System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
+        Allure.addAttachment("Données supplémentaires: ", String.valueOf("Heure de fin du test "+ new Date().toString()));
+
     }
 
     @Override

@@ -6,13 +6,23 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.SignInPage;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Tracing;
+import io.qameta.allure.Allure;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
+
+import static Factory.PlaywrightFactory.i;
 
 public class BaseTest {
     PlaywrightFactory pf;
@@ -67,11 +77,50 @@ public class BaseTest {
             }
             index3.delete();
         }
+        File index4 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/Traces");
+        if (index4.exists()) {
+            String[]entries = index4.list();
+            for(String s: entries){
+                File currentFile = new File(index4.getPath(),s);
+                currentFile.delete();
+            }
+            index4.delete();
+        }
 
     }
 
     @AfterTest
     public void afterTest() {
+
+        pf.getBrowserContext().tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Traces/trace.zip")));
+        byte[] byteArr = new byte[0];
+        try {
+            Path content = Paths.get("Traces/trace.zip");
+//            i++;
+            Allure.addAttachment("trace: ", Files.newInputStream(content) );
+            // file to byte[], Path
+//            byteArr = Files.readAllBytes(content);
+//            Allure.addAttachment("Trace", "archive/zip", new ByteArrayInputStream(byteArr), "zip");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         page.context().browser().close();
+
+
+        byte[] byteArr2 = new byte[0];
+        try {
+            Path path = page.video().path();
+            // file to byte[], Path
+            byteArr2 = Files.readAllBytes(path);
+            Allure.addAttachment("Video", "video/mp4", new ByteArrayInputStream(byteArr2), "mp4");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
+
 }
+
