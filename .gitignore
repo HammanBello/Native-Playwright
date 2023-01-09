@@ -13,6 +13,7 @@ allure-results/
 images/
 screenshot/
 Traces/
+target/
 # Package Files #
 *.jar
 *.war
