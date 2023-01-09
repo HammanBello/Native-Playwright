@@ -1,4 +1,6 @@
+listeners\ExtentReportListener.class
 Factory\PlaywrightFactory.class
+listeners\Retry.class
 listeners\AllureReportListener.class
 Pages\LoginPage.class
 Pages\HomePage.class

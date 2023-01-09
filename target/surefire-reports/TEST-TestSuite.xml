@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="83.739" tests="11" errors="0" skipped="0" failures="4">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="165.338" tests="14" errors="0" skipped="0" failures="5">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\hambe\AppData\Local\Temp\surefire13805499427068366830\surefirebooter-20230109004022893_3.jar C:\Users\hambe\AppData\Local\Temp\surefire13805499427068366830 2023-01-09T00-40-22_610-jvmRun1 surefire-20230109004022893_1tmp surefire_0-20230109004022893_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\hambe\AppData\Local\Temp\surefire12182592296112988241\surefirebooter-20230109162705683_3.jar C:\Users\hambe\AppData\Local\Temp\surefire12182592296112988241 2023-01-09T16-27-05_201-jvmRun1 surefire-20230109162705683_1tmp surefire_0-20230109162705683_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\hambe\Desktop\Native Playright\Native-Playwright\target\test-classes;C:\Users\hambe\Desktop\Native Playright\Native-Playwright\target\classes;C:\Users\hambe\.m2\repository\com\microsoft\playwright\playwright\1.27.0\playwright-1.27.0.jar;C:\Users\hambe\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\hambe\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\hambe\.m2\repository\com\microsoft\playwright\driver\1.27.0\driver-1.27.0.jar;C:\Users\hambe\.m2\repository\com\microsoft\playwright\driver-bundle\1.27.0\driver-bundle-1.27.0.jar;C:\Users\hambe\.m2\repository\io\qameta\allure\allure-testng\2.20.1\allure-testng-2.20.1.jar;C:\Users\hambe\.m2\repository\io\qameta\allure\allure-java-commons\2.20.1\allure-java-commons-2.20.1.jar;C:\Users\hambe\.m2\repository\io\qameta\allure\allure-model\2.20.1\allure-model-2.20.1.jar;C:\Users\hambe\.m2\repository\io\qameta\allure\allure-test-filter\2.20.1\allure-test-filter-2.20.1.jar;C:\Users\hambe\.m2\repository\org\testng\testng\7.7.0\testng-7.7.0.jar;C:\Users\hambe\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\hambe\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\hambe\.m2\repository\org\webjars\jquery\3.6.1\jquery-3.6.1.jar;C:\Users\hambe\.m2\repository\com\github\automatedowl\allure-environment-writer\1.0.0\allure-environment-writer-1.0.0.jar;C:\Users\hambe\.m2\repository\com\google\guava\guava\27.0-jre\guava-27.0-jre.jar;C:\Users\hambe\.m2\repository\com\google\guava\failureaccess\1.0\failureaccess-1.0.jar;C:\Users\hambe\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\hambe\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\hambe\.m2\repository\org\checkerframework\checker-qual\2.5.2\checker-qual-2.5.2.jar;C:\Users\hambe\.m2\repository\com\google\errorprone\error_prone_annotations\2.2.0\error_prone_annotations-2.2.0.jar;C:\Users\hambe\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\hambe\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.17\animal-sniffer-annotations-1.17.jar;C:\Users\hambe\.m2\repository\org\apache\poi\poi-ooxml\4.1.1\poi-ooxml-4.1.1.jar;C:\Users\hambe\.m2\repository\org\apache\poi\poi\4.1.1\poi-4.1.1.jar;C:\Users\hambe\.m2\repository\commons-codec\commons-codec\1.13\commons-codec-1.13.jar;C:\Users\hambe\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\hambe\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\hambe\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.1\poi-ooxml-schemas-4.1.1.jar;C:\Users\hambe\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\hambe\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\hambe\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\hambe\.m2\repository\com\aventstack\extentreports\5.0.8\extentreports-5.0.8.jar;C:\Users\hambe\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\Users\hambe\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\hambe\.m2\repository\org\freemarker\freemarker\2.3.30\freemarker-2.3.30.jar;C:\Users\hambe\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\hambe\AppData\Local\Temp\surefire13805499427068366830\surefirebooter-20230109004022893_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\hambe\AppData\Local\Temp\surefire12182592296112988241\surefirebooter-20230109162705683_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
@@ -56,131 +56,55 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="createNewUserTest[uggggg, douuuuuuu, douuuuuuu](1)" classname="tests.TestRunner" time="6.014">
-    <failure message="L&apos;adresse mail n&apos;a pas un format valide" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: L'adresse mail n'a pas un format valide
-	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:63)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-]]></failure>
+  <testcase name="loginPageNavigationTest" classname="tests.TestRunner" time="6.034">
     <system-out><![CDATA[...
 ... TestNG 7.7.0 by Cédric Beust (cedric@beust.com)
 ...
 
+I am in onStart method Test_suite_edge
 I am in onStart method Test_suite_chromium
+browser name is : firefox
 browser name is : chromium
-I am in onTestStart method createNewUserTest start
-Timeout!
-I am in onTestFailure method createNewUserTest failed
-Screenshot captured for test case:createNewUserTest
+I am in onTestStart method loginPageNavigationTest start
+ok
+I am in onTestSuccess method loginPageNavigationTest succeed
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="createNewUserTest[ad@gmail.com, dau, dau](2)" classname="tests.TestRunner" time="5.675">
-    <failure message="Mot de passe trop court" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Mot de passe trop court
-	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-]]></failure>
-    <system-out><![CDATA[I am in onTestStart method createNewUserTest start
-Timeout!
-I am in onTestFailure method createNewUserTest failed
-Screenshot captured for test case:createNewUserTest
-]]></system-out>
-  </testcase>
-  <testcase name="createNewUserTest[akakutorag@gmail.com, douuuuuuu, douuuuuuu](3)" classname="tests.TestRunner" time="5.727">
-    <failure message="L&apos;utilisateur existe déjà" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: L'utilisateur existe déjà
-	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:57)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-]]></failure>
-    <system-out><![CDATA[I am in onTestStart method createNewUserTest start
-Timeout!
-I am in onTestFailure method createNewUserTest failed
-Screenshot captured for test case:createNewUserTest
-]]></system-out>
-  </testcase>
-  <testcase name="loginPageNavigationTest" classname="tests.TestRunner" time="6.008">
-    <system-out><![CDATA[I am in onTestStart method loginPageNavigationTest start
+  <testcase name="loginPageNavigationTest" classname="tests.TestRunner" time="31.67">
+    <system-out><![CDATA[I am in onFinish method Test_suite_chromium
+Timeout to empty the cart!
 ok
 I am in onTestSuccess method loginPageNavigationTest succeed
 ]]></system-out>
   </testcase>
-  <testcase name="searchTest[T-shirt](1)" classname="tests.TestRunner" time="2.063">
+  <testcase name="searchTest[T-shirt](1)" classname="tests.TestRunner" time="2.293">
     <system-out><![CDATA[I am in onTestStart method searchTest start
 ok
 I am in onTestSuccess method searchTest succeed
 ]]></system-out>
   </testcase>
-  <testcase name="searchTest[xoxo](2)" classname="tests.TestRunner" time="17.162">
-    <failure message="Produit inexistant dans la base de donnée" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Produit inexistant dans la base de donnée
+  <testcase name="searchTest[T-shirt](1)" classname="tests.TestRunner" time="2.211">
+    <system-out><![CDATA[I am in onTestStart method searchTest start
+ok
+I am in onTestSuccess method searchTest succeed
+]]></system-out>
+  </testcase>
+  <testcase name="addToCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="1.243">
+    <system-out><![CDATA[I am in onTestStart method addToCartTest start
+I am in onTestStart method loginPageNavigationTest start
+I am in onTestSuccess method addToCartTest succeed
+]]></system-out>
+  </testcase>
+  <testcase name="addToCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="30.348">
+    <failure message="Article inexistant ou non localisable expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.searchTest(TestRunner.java:117)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at tests.TestRunner.addToCartTest(TestRunner.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -204,38 +128,168 @@ I am in onTestSuccess method searchTest succeed
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 ]]></failure>
-    <system-out><![CDATA[I am in onTestStart method searchTest start
-Timeout pour le résultat de la recherche!
-I am in onTestFailure method searchTest failed
-Screenshot captured for test case:searchTest
+    <system-out><![CDATA[I am in onTestStart method addToCartTest start
+Timeout to click on article
+I am in onTestFailure method addToCartTest failed
+Screenshot captured for test case:addToCartTest
 ]]></system-out>
   </testcase>
-  <testcase name="addToCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="3.053">
+  <testcase name="addToCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="2.694">
     <system-out><![CDATA[I am in onTestStart method addToCartTest start
 I am in onTestSuccess method addToCartTest succeed
 ]]></system-out>
   </testcase>
-  <testcase name="addToCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="2.746">
+  <testcase name="addToCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="30.172">
+    <failure message="Article inexistant ou non localisable expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at tests.TestRunner.addToCartTest(TestRunner.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></failure>
     <system-out><![CDATA[I am in onTestStart method addToCartTest start
-I am in onTestSuccess method addToCartTest succeed
+Timeout to click on article
+I am in onTestFailure method addToCartTest failed
+Screenshot captured for test case:addToCartTest
 ]]></system-out>
   </testcase>
-  <testcase name="suppressFromCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="14.171">
+  <testcase name="suppressFromCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="14.324">
     <system-out><![CDATA[I am in onTestStart method suppressFromCartTest start
 Timeout pour le résultat de la recherche!
 I am in onTestSuccess method suppressFromCartTest succeed
 ]]></system-out>
   </testcase>
-  <testcase name="suppressFromCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="13.257">
+  <testcase name="suppressFromCartTest[T-shirt en coton biologique, 3](1)" classname="tests.TestRunner" time="5.256">
+    <failure message="Impossible de supprimer l&apos;article" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Impossible de supprimer l'article
+	at org.testng.Assert.fail(Assert.java:110)
+	at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+	at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></failure>
+    <system-out><![CDATA[I am in onTestStart method suppressFromCartTest start
+Timeout to press on cart icon!
+I am in onTestFailure method suppressFromCartTest failed
+Screenshot captured for test case:suppressFromCartTest
+]]></system-out>
+  </testcase>
+  <testcase name="suppressFromCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="13.319">
     <system-out><![CDATA[I am in onTestStart method suppressFromCartTest start
 Timeout to press on cart icon!
 Timeout pour le résultat de la recherche!
 I am in onTestSuccess method suppressFromCartTest succeed
 ]]></system-out>
   </testcase>
-  <testcase name="LOGOUT" classname="tests.TestRunner" time="0.349">
+  <testcase name="suppressFromCartTest[Chaussures Hommes de Ville, 3](2)" classname="tests.TestRunner" time="5.292">
+    <failure message="Impossible de supprimer l&apos;article" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Impossible de supprimer l'article
+	at org.testng.Assert.fail(Assert.java:110)
+	at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+	at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></failure>
+    <system-out><![CDATA[I am in onTestStart method suppressFromCartTest start
+Timeout to press on cart icon!
+I am in onTestFailure method suppressFromCartTest failed
+Screenshot captured for test case:suppressFromCartTest
+]]></system-out>
+  </testcase>
+  <testcase name="LOGOUT" classname="tests.TestRunner" time="0.509">
     <system-out><![CDATA[I am in onTestStart method LOGOUT start
 I am in onTestSuccess method LOGOUT succeed
+]]></system-out>
+  </testcase>
+  <testcase name="LOGOUT" classname="tests.TestRunner" time="5.107">
+    <failure message="Impossible de cliquer sur le boutton déconnexion" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Impossible de cliquer sur le boutton déconnexion
+	at org.testng.Assert.fail(Assert.java:110)
+	at tests.TestRunner.LOGOUT(TestRunner.java:167)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></failure>
+    <system-out><![CDATA[I am in onTestStart method LOGOUT start
+I am in onTestFailure method LOGOUT failed
+Screenshot captured for test case:LOGOUT
 ]]></system-out>
   </testcase>
 </testsuite>

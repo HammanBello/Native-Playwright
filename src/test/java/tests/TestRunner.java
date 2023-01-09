@@ -19,7 +19,10 @@ public class TestRunner extends BaseTest {
 
     @DataProvider(name = "getRegistrationTestData")
     public Object[][] getRegistrationTestData() {
-        Object usersData[][] = TestUtil.getTestData(AppConstants.CONTACTS_SHEET_NAME);
+        String s = AppConstants.CONTACTS_SHEET_NAME;
+        if (!dataSheet.isEmpty())
+            s = dataSheet;
+        Object usersData[][] = TestUtil.getTestData(s);
         return usersData;
     }
 
@@ -39,7 +42,7 @@ public class TestRunner extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "getRegistrationTestData", priority = 1)@Ignore
+    @Test(dataProvider = "getRegistrationTestData", priority = 1)
     public void createNewUserTest(String email, String password, String passwordconf) {
         page.navigate(prop.getProperty("url_signIn").trim());
 

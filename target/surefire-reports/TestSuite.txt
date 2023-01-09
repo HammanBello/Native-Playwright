@@ -1,11 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 83.739 s <<< FAILURE! - in TestSuite
-tests.TestRunner.createNewUserTest[uggggg, douuuuuuu, douuuuuuu](1)  Time elapsed: 6.014 s  <<< FAILURE!
-java.lang.AssertionError: L'adresse mail n'a pas un format valide
+Tests run: 14, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 165.338 s <<< FAILURE! - in TestSuite
+tests.TestRunner.addToCartTest[T-shirt en coton biologique, 3](1)  Time elapsed: 30.348 s  <<< FAILURE!
+java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:63)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at tests.TestRunner.addToCartTest(TestRunner.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -29,10 +31,12 @@ java.lang.AssertionError: L'adresse mail n'a pas un format valide
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-tests.TestRunner.createNewUserTest[ad@gmail.com, dau, dau](2)  Time elapsed: 5.675 s  <<< FAILURE!
-java.lang.AssertionError: Mot de passe trop court
+tests.TestRunner.addToCartTest[Chaussures Hommes de Ville, 3](2)  Time elapsed: 30.172 s  <<< FAILURE!
+java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:59)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at tests.TestRunner.addToCartTest(TestRunner.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -56,10 +60,11 @@ java.lang.AssertionError: Mot de passe trop court
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-tests.TestRunner.createNewUserTest[akakutorag@gmail.com, douuuuuuu, douuuuuuu](3)  Time elapsed: 5.727 s  <<< FAILURE!
-java.lang.AssertionError: L'utilisateur existe déjà
+tests.TestRunner.suppressFromCartTest[T-shirt en coton biologique, 3](1)  Time elapsed: 5.256 s  <<< FAILURE!
+java.lang.AssertionError: Impossible de supprimer l'article
 	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.createNewUserTest(TestRunner.java:57)
+	at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+	at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -83,10 +88,38 @@ java.lang.AssertionError: L'utilisateur existe déjà
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
-tests.TestRunner.searchTest[xoxo](2)  Time elapsed: 17.162 s  <<< FAILURE!
-java.lang.AssertionError: Produit inexistant dans la base de donnée
+tests.TestRunner.suppressFromCartTest[Chaussures Hommes de Ville, 3](2)  Time elapsed: 5.292 s  <<< FAILURE!
+java.lang.AssertionError: Impossible de supprimer l'article
 	at org.testng.Assert.fail(Assert.java:110)
-	at tests.TestRunner.searchTest(TestRunner.java:117)
+	at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+	at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+tests.TestRunner.LOGOUT  Time elapsed: 5.107 s  <<< FAILURE!
+java.lang.AssertionError: Impossible de cliquer sur le boutton déconnexion
+	at org.testng.Assert.fail(Assert.java:110)
+	at tests.TestRunner.LOGOUT(TestRunner.java:167)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -48,7 +48,7 @@ public class PlaywrightFactory {
         if (headless.equals("true"))
             H = true;
         else
-            H=false;
+            H = false;
         System.out.println("browser name is : " + browserName);
 
         // playwright = Playwright.create();

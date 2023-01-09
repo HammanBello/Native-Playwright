@@ -4,17 +4,20 @@
   <listeners>
     <listener class-name="listeners.AllureReportListener"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Test_suite_chromium(failed)" verbose="0">
-    <parameter name="browser" value="chromium"/>
+  <test thread-count="5" parallel="tests" name="Test_suite_edge(failed)" verbose="0">
+    <parameter name="mail" value="gnanteff@gmail.com"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="psswd" value="Marcelecon1."/>
     <classes>
       <class name="tests.TestRunner">
         <methods>
           <include name="beforeTest"/>
+          <include name="suppressFromCartTest" invocation-numbers="0 1"/>
           <include name="afterTest"/>
-          <include name="searchTest" invocation-numbers="1"/>
-          <include name="createNewUserTest" invocation-numbers="0 1 2"/>
+          <include name="addToCartTest" invocation-numbers="0 1"/>
+          <include name="LOGOUT"/>
         </methods>
       </class> <!-- tests.TestRunner -->
     </classes>
-  </test> <!-- Test_suite_chromium(failed) -->
+  </test> <!-- Test_suite_edge(failed) -->
 </suite> <!-- Failed suite [Open Cart Test Regression PW Suite] -->

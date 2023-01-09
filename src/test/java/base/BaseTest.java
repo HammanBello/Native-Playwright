@@ -8,10 +8,7 @@ import Pages.SignInPage;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Tracing;
 import io.qameta.allure.Allure;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 
 import java.io.ByteArrayInputStream;
@@ -35,15 +32,17 @@ public class BaseTest {
 
     public String mail;
 
+    public String dataSheet;
     public String psswd;
 
-    @Parameters({ "browser", "mail","psswd" })
+    @Parameters({ "browser", "mail","psswd", "datasheet"})
     @BeforeTest
-    public void beforeTest(String browserName, String email, String pwd) {
+    public void beforeTest(String browserName, String email, String pwd, @Optional String sheet) {
         pf = new PlaywrightFactory();
         mail = email;
         psswd = pwd;
         prop = pf.init_prop();
+        dataSheet = sheet;
 
         if (browserName != null) {
             prop.setProperty("browser", browserName);
@@ -59,10 +58,11 @@ public class BaseTest {
         if (index.exists()) {
             String[]entries = index.list();
             for(String s: entries){
-                File currentFile = new File(index.getPath(),s);
-                currentFile.delete();
+                if (!s.equals("environment.xml")){
+                    File currentFile = new File(index.getPath(),s);
+                    currentFile.delete();}
             }
-            index.delete();
+//            index.delete();
         }
         File index2 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/screenshot");
         if (index2.exists()) {
@@ -91,23 +91,17 @@ public class BaseTest {
             }
             index4.delete();
         }
-//        File index6 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
-//        if (index6.exists()) {
-//            String[]entries = index6.list();
-//            for(String s: entries){
-//                File currentFile = new File(index6.getPath(),s);
-//                currentFile.delete();
-//            }
-//            index6.delete();
-//        }
+
         File index5 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
         if (index5.exists()) {
             String[]entries = index5.list();
             for(String s: entries){
+                if (!s.equals("environment.xml")){
                 File currentFile = new File(index5.getPath(),s);
                 currentFile.delete();
+                }
             }
-            index5.delete();
+//            index5.delete();
         }
         File index7 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/target/videos");
         if (index7.exists()) {

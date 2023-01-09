@@ -1,190 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="7" failed="4" skipped="0">
+<testng-results ignored="2" total="16" passed="9" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-09T00:40:23 WAT" name="Open Cart Test Regression PW Suite" finished-at="2023-01-09T00:41:46 WAT" duration-ms="82969">
+  <suite started-at="2023-01-09T16:27:06 WAT" name="Open Cart Test Regression PW Suite" finished-at="2023-01-09T16:29:51 WAT" duration-ms="164691">
     <groups>
     </groups>
-    <test started-at="2023-01-09T00:40:23 WAT" name="Test_suite_chromium" finished-at="2023-01-09T00:41:46 WAT" duration-ms="82969">
+    <test started-at="2023-01-09T16:27:06 WAT" name="Test_suite_chromium" finished-at="2023-01-09T16:27:59 WAT" duration-ms="53232">
       <class name="tests.TestRunner">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:23 WAT" name="beforeTest" finished-at="2023-01-09T00:40:29 WAT" duration-ms="6124" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:06 WAT" name="beforeTest" finished-at="2023-01-09T16:27:16 WAT" duration-ms="9344" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chromium]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[gnanteffezez@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[gnanteffezez@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="createNewUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:30 WAT" name="createNewUserTest" data-provider="getRegistrationTestData" finished-at="2023-01-09T00:40:35 WAT" duration-ms="5634" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[uggggg]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[douuuuuuu]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[douuuuuuu]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[L'adresse mail n'a pas un format valide]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: L'adresse mail n'a pas un format valide
-at org.testng.Assert.fail(Assert.java:110)
-at tests.TestRunner.createNewUserTest(TestRunner.java:63)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewUserTest -->
-        <test-method signature="createNewUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:36 WAT" name="createNewUserTest" data-provider="getRegistrationTestData" finished-at="2023-01-09T00:40:41 WAT" duration-ms="5463" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ad@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[dau]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[dau]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Mot de passe trop court]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Mot de passe trop court
-at org.testng.Assert.fail(Assert.java:110)
-at tests.TestRunner.createNewUserTest(TestRunner.java:59)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewUserTest -->
-        <test-method signature="createNewUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:42 WAT" name="createNewUserTest" data-provider="getRegistrationTestData" finished-at="2023-01-09T00:40:47 WAT" duration-ms="5505" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[akakutorag@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[douuuuuuu]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[douuuuuuu]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[L'utilisateur existe déjà]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: L'utilisateur existe déjà
-at org.testng.Assert.fail(Assert.java:110)
-at tests.TestRunner.createNewUserTest(TestRunner.java:57)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewUserTest -->
-        <test-method signature="loginPageNavigationTest()[pri:2, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:47 WAT" name="loginPageNavigationTest" finished-at="2023-01-09T00:40:53 WAT" duration-ms="6005" status="PASS">
+        <test-method signature="loginPageNavigationTest()[pri:2, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:16 WAT" name="loginPageNavigationTest" finished-at="2023-01-09T16:27:22 WAT" duration-ms="6021" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageNavigationTest -->
-        <test-method signature="searchTest(java.lang.String)[pri:3, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:53 WAT" name="searchTest" data-provider="getProductData" finished-at="2023-01-09T00:40:55 WAT" duration-ms="2063" status="PASS">
+        <test-method signature="searchTest(java.lang.String)[pri:3, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:22 WAT" name="searchTest" data-provider="getProductData" finished-at="2023-01-09T16:27:24 WAT" duration-ms="2281" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -195,22 +46,144 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchTest -->
-        <test-method signature="searchTest(java.lang.String)[pri:3, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:40:55 WAT" name="searchTest" data-provider="getProductData" finished-at="2023-01-09T00:41:12 WAT" duration-ms="17032" status="FAIL">
+        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:24 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:27:27 WAT" duration-ms="2831" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[xoxo]]>
+                <![CDATA[T-shirt en coton biologique]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartTest -->
+        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:27 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:27:29 WAT" duration-ms="2668" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chaussures Hommes de Ville]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartTest -->
+        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:29 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:27:44 WAT" duration-ms="14326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[T-shirt en coton biologique]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suppressFromCartTest -->
+        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:44 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:27:57 WAT" duration-ms="13316" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chaussures Hommes de Ville]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suppressFromCartTest -->
+        <test-method signature="LOGOUT()[pri:6, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:57 WAT" name="LOGOUT" finished-at="2023-01-09T16:27:58 WAT" duration-ms="501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LOGOUT -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.TestRunner@1a6d8329]" started-at="2023-01-09T16:27:58 WAT" name="afterTest" finished-at="2023-01-09T16:27:59 WAT" duration-ms="1686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- tests.TestRunner -->
+    </test> <!-- Test_suite_chromium -->
+    <test started-at="2023-01-09T16:27:06 WAT" name="Test_suite_edge" finished-at="2023-01-09T16:29:51 WAT" duration-ms="164691">
+      <class name="tests.TestRunner">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:27:06 WAT" name="beforeTest" finished-at="2023-01-09T16:27:26 WAT" duration-ms="19298" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[gnanteff@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Marcelecon1.]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="loginPageNavigationTest()[pri:2, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:27:26 WAT" name="loginPageNavigationTest" finished-at="2023-01-09T16:28:29 WAT" duration-ms="63270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageNavigationTest -->
+        <test-method signature="searchTest(java.lang.String)[pri:3, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:28:29 WAT" name="searchTest" data-provider="getProductData" finished-at="2023-01-09T16:28:31 WAT" duration-ms="2208" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[T-shirt]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchTest -->
+        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:28:31 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:29:01 WAT" duration-ms="30185" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[T-shirt en coton biologique]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Produit inexistant dans la base de donnée]]>
+              <![CDATA[Article inexistant ou non localisable expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Produit inexistant dans la base de donnée
+              <![CDATA[java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:110)
-at tests.TestRunner.searchTest(TestRunner.java:117)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at tests.TestRunner.addToCartTest(TestRunner.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -238,24 +211,8 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchTest -->
-        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:13 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T00:41:16 WAT" duration-ms="3052" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[T-shirt en coton biologique]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- addToCartTest -->
-        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:16 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T00:41:18 WAT" duration-ms="2745" status="PASS">
+        <test-method signature="addToCartTest(java.lang.String,int)[pri:4, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:29:01 WAT" name="addToCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:29:31 WAT" duration-ms="30092" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -268,10 +225,45 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Article inexistant ou non localisable expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Article inexistant ou non localisable expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at tests.TestRunner.addToCartTest(TestRunner.java:140)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCartTest -->
-        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:18 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T00:41:32 WAT" duration-ms="14170" status="PASS">
+        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:29:32 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:29:37 WAT" duration-ms="5166" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -284,10 +276,44 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Impossible de supprimer l'article]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Impossible de supprimer l'article
+at org.testng.Assert.fail(Assert.java:110)
+at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suppressFromCartTest -->
-        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:32 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T00:41:46 WAT" duration-ms="13247" status="PASS">
+        <test-method signature="suppressFromCartTest(java.lang.String,int)[pri:5, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:29:37 WAT" name="suppressFromCartTest" data-provider="getProductDataForAdd" finished-at="2023-01-09T16:29:42 WAT" duration-ms="5215" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -300,18 +326,85 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Impossible de supprimer l'article]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Impossible de supprimer l'article
+at org.testng.Assert.fail(Assert.java:110)
+at Pages.HomePage.DeleteFromCart(HomePage.java:254)
+at tests.TestRunner.suppressFromCartTest(TestRunner.java:152)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suppressFromCartTest -->
-        <test-method signature="LOGOUT()[pri:6, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:46 WAT" name="LOGOUT" finished-at="2023-01-09T00:41:46 WAT" duration-ms="347" status="PASS">
+        <test-method signature="LOGOUT()[pri:6, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:29:42 WAT" name="LOGOUT" finished-at="2023-01-09T16:29:47 WAT" duration-ms="5026" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Impossible de cliquer sur le boutton déconnexion]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Impossible de cliquer sur le boutton déconnexion
+at org.testng.Assert.fail(Assert.java:110)
+at tests.TestRunner.LOGOUT(TestRunner.java:167)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LOGOUT -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.TestRunner@368247b9]" started-at="2023-01-09T00:41:46 WAT" name="afterTest" finished-at="2023-01-09T00:41:46 WAT" duration-ms="186" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.TestRunner@74d1dc36]" started-at="2023-01-09T16:29:47 WAT" name="afterTest" finished-at="2023-01-09T16:29:51 WAT" duration-ms="3597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- tests.TestRunner -->
-    </test> <!-- Test_suite_chromium -->
+    </test> <!-- Test_suite_edge -->
   </suite> <!-- Open Cart Test Regression PW Suite -->
 </testng-results>
