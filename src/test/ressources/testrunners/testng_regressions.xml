@@ -11,17 +11,23 @@
 
     <test name="Test_suite_chromium">
         <parameter name="browser" value="chromium" />
+        <parameter name="mail" value="gnanteffezez@gmail.com" />
+        <parameter name="psswd" value="gnanteffezez@gmail.com" />
+
         <classes>
             <class name="tests.TestRunner" />
         </classes>
     </test>
 
-<!--    <test name="Test_suite_edge">-->
-<!--        <parameter name="browser" value="edge" />-->
-<!--        <classes>-->
-<!--            <class name="tests.TestRunner" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Test_suite_edge">
+        <parameter name="browser" value="edge" />
+        <parameter name="mail" value="gnanteff@gmail.com" />
+        <parameter name="psswd" value="Marcelecon1." />
+
+        <classes>
+            <class name="tests.TestRunner" />
+        </classes>
+    </test>
 
 <!--    <test name="Test_suite_firefox">-->
 <!--        <parameter name="browser" value="firefox" />-->

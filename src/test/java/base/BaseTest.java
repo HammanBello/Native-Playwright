@@ -26,19 +26,23 @@ import static Factory.PlaywrightFactory.i;
 
 public class BaseTest {
     PlaywrightFactory pf;
-    public Page page;
+    public  Page page;
     protected Properties prop;
 
     public HomePage homePage;
     public LoginPage loginPage;
     public SignInPage signInPage;
 
+    public String mail;
 
-    @Parameters({ "browser" })
+    public String psswd;
+
+    @Parameters({ "browser", "mail","psswd" })
     @BeforeTest
-    public void beforeTest(String browserName) {
+    public void beforeTest(String browserName, String email, String pwd) {
         pf = new PlaywrightFactory();
-
+        mail = email;
+        psswd = pwd;
         prop = pf.init_prop();
 
         if (browserName != null) {
@@ -87,15 +91,15 @@ public class BaseTest {
             }
             index4.delete();
         }
-        File index6 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
-        if (index6.exists()) {
-            String[]entries = index6.list();
-            for(String s: entries){
-                File currentFile = new File(index6.getPath(),s);
-                currentFile.delete();
-            }
-            index6.delete();
-        }
+//        File index6 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
+//        if (index6.exists()) {
+//            String[]entries = index6.list();
+//            for(String s: entries){
+//                File currentFile = new File(index6.getPath(),s);
+//                currentFile.delete();
+//            }
+//            index6.delete();
+//        }
         File index5 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
         if (index5.exists()) {
             String[]entries = index5.list();

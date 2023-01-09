@@ -1,6 +1,6 @@
+Factory\PlaywrightFactory.class
 listeners\AllureReportListener.class
 Pages\LoginPage.class
 Pages\HomePage.class
 constants\AppConstants.class
-Factory\PlaywrightFactory.class
 Pages\SignInPage.class

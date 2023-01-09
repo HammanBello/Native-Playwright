@@ -18,7 +18,7 @@ import java.util.Date;
 
 import static Factory.PlaywrightFactory.takeScreenshot;
 
-//public class ExtentReportListener implements ITestListener {
+public class ExtentReportListener  {}
 //
 //    private static final String OUTPUT_FOLDER = "./build/";
 //    private static final String FILE_NAME = "TestExecutionReport.html";

@@ -162,7 +162,7 @@ public class HomePage {
             page.click("#style_content_cart_wrapper__mqNbf > span");
             String[] productNames = productName.split(" ");
             Locator p = page.locator(".style_card__JLMp6")
-                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0])));
+                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0]))).first();
             p.waitFor();
             return p.isVisible();
         } catch (TimeoutError e) {
@@ -178,7 +178,7 @@ public class HomePage {
     public void emptyTheCart() {
         if (!page.isVisible(badgeOfAdd)){
             try {
-                page.waitForSelector(cartIcon, new Page.WaitForSelectorOptions().setTimeout(15000));
+                page.waitForSelector(cartIcon, new Page.WaitForSelectorOptions().setTimeout(5000));
                 page.click(cartIcon);
                 page.click("text=Vider le panier");
 //                page.waitForSelector(badgeOfAdd , new Page.WaitForSelectorOptions().setTimeout(15000));
@@ -272,7 +272,7 @@ public class HomePage {
     public Boolean VerifyArticleDeletion(String s) {
         String[] productNames = s.split(" ");
         Locator p = page.locator(".style_card__JLMp6")
-                .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0])));
+                .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0]))).first();
         try {
 //            page.waitForSelector("class=style_card__gNEqX",new Page.WaitForSelectorOptions().setTimeout(15000));
             p.waitFor(new Locator.WaitForOptions().setTimeout(2000));
