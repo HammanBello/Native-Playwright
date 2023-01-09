@@ -40,11 +40,10 @@ pipeline
         
                 stage("Allure Report generation"){
                     steps{
-                env.BUILD_TIME = sh(returnStdout: true, script: 'date +%F-%T').trim()
             allure([
                 includeProperties : true,
                 jdk : 'java',
-                properties : [[key: 'date du test', value: '${env.BUILD_URL}'][key: 'release version', value: '4.0.2']],
+                properties : [[key: 'release version', value: '4.0.2']],
                 reportBuildPolicy : 'ALWAYS',
                 results : [[path: 'allure-results']]
             ])
