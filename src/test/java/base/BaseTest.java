@@ -50,6 +50,7 @@ public class BaseTest {
         loginPage = new LoginPage(page);
         signInPage = new SignInPage(page);
 
+
         File index = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/allure-results");
         if (index.exists()) {
             String[]entries = index.list();
@@ -86,7 +87,24 @@ public class BaseTest {
             }
             index4.delete();
         }
-
+        File index6 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
+        if (index6.exists()) {
+            String[]entries = index6.list();
+            for(String s: entries){
+                File currentFile = new File(index6.getPath(),s);
+                currentFile.delete();
+            }
+            index6.delete();
+        }
+        File index5 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
+        if (index5.exists()) {
+            String[]entries = index5.list();
+            for(String s: entries){
+                File currentFile = new File(index5.getPath(),s);
+                currentFile.delete();
+            }
+            index5.delete();
+        }
     }
 
     @AfterTest
