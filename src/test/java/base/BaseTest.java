@@ -109,6 +109,25 @@ public class BaseTest {
             }
             index5.delete();
         }
+        File index7 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/target/videos");
+        if (index7.exists()) {
+            String[]entries = index7.list();
+            for(String s: entries){
+                File currentFile = new File(index7.getPath(),s);
+                currentFile.delete();
+            }
+            index7.delete();
+        }
+        File index8 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/target/videos");
+        if (index8.exists()) {
+            String[]entries = index8.list();
+            for(String s: entries){
+                File currentFile = new File(index8.getPath(),s);
+                currentFile.delete();
+            }
+            index8.delete();
+        }
+
     }
 
     @AfterTest

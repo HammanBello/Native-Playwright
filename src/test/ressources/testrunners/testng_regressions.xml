@@ -20,7 +20,7 @@
     </test>
 
     <test name="Test_suite_edge">
-        <parameter name="browser" value="edge" />
+        <parameter name="browser" value="firefox" />
         <parameter name="mail" value="gnanteff@gmail.com" />
         <parameter name="psswd" value="Marcelecon1." />
 
