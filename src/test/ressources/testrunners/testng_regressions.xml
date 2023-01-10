@@ -18,24 +18,24 @@
             <class name="tests.TestRunner" />
         </classes>
     </test>
-<!--    <test name="Test_suite_chrome">-->
-<!--        <parameter name="browser" value="chrome" />-->
-<!--        <parameter name="mail" value="237pk69@gmail.com" />-->
-<!--        <parameter name="psswd" value="P@wk/*69" />-->
-<!--        <parameter name="datasheet" value="datasourcechrome" />-->
-<!--        <classes>-->
-<!--            <class name="tests.TestRunner" />-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Test_suite_chromium">-->
-<!--        <parameter name="browser" value="chromium" />-->
-<!--        <parameter name="mail" value="gnanteff@gmail.com" />-->
-<!--        <parameter name="psswd" value="Marcelecon1." />-->
-<!--        <parameter name="datasheet" value="datasource" />-->
-<!--        <classes>-->
-<!--            <class name="tests.TestRunner" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Test_suite_chrome">
+        <parameter name="browser" value="chrome" />
+        <parameter name="mail" value="237pk69@gmail.com" />
+        <parameter name="psswd" value="P@wk/*69" />
+        <parameter name="datasheet" value="datasourcechrome" />
+        <classes>
+            <class name="tests.TestRunner" />
+        </classes>
+    </test>
+    <test name="Test_suite_chromium">
+        <parameter name="browser" value="chromium" />
+        <parameter name="mail" value="gnanteff@gmail.com" />
+        <parameter name="psswd" value="Marcelecon1." />
+        <parameter name="datasheet" value="datasource" />
+        <classes>
+            <class name="tests.TestRunner" />
+        </classes>
+    </test>
 
 <!--    <test name="Test_suite_firefox">-->
 <!--        <parameter name="browser" value="firefox" />-->

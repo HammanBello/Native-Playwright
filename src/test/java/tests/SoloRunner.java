@@ -105,7 +105,7 @@ public class SoloRunner extends BaseTest {
 
 
 
-    @Test(priority = 3,dataProvider = "getProductData",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 3,dataProvider = "getProductData")@Severity(SeverityLevel.NORMAL)
     public void searchTest(String productName) {
       try{  loginPageNavigationTest();
         homePage.Idoasearch(productName);
@@ -136,7 +136,7 @@ public class SoloRunner extends BaseTest {
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.BLOCKER)
+    @Test(priority = 4,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.BLOCKER)
     public void addToCartTest(String productName, String quantity) {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
@@ -155,7 +155,7 @@ public class SoloRunner extends BaseTest {
 
     }
 
-    @Test(priority = 5,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 5,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.NORMAL)
     public void suppressFromCartTest(String productName, String quantity)  {
         addToCartTest(productName,quantity);
         float Z = parseFloat(quantity);
@@ -168,7 +168,7 @@ public class SoloRunner extends BaseTest {
 
     }
 
-    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 6)@Severity(SeverityLevel.NORMAL)
     public void LOGOUT()  {
 
         loginPageNavigationTest();
