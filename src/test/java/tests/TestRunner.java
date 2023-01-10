@@ -23,8 +23,8 @@ public class TestRunner extends BaseTest {
 //        beforeTest(browserName,email,pwd,sheet);
 //    }
 
-    @DataProvider(name = "getRegistrationTestData")
-    public Object[][] getRegistrationTestData() {
+    @DataProvider
+    public Object[][] getRegistrationData() {
         String s = AppConstants.CONTACTS_SHEET_NAME;
         Object usersData[][] = TestUtil.getTestData(s);
         return usersData;
@@ -44,11 +44,10 @@ public class TestRunner extends BaseTest {
         return usersData;
     }
 
-    @Test(dataProvider = "getRegistrationTestData", priority = 1)
+    @Test(dataProvider = "getRegistrationData", priority = 1)
     public void createNewUserTest(String email, String password, String passwordconf) {
-        page.navigate(prop.getProperty("url_signIn").trim());
-
         try{
+            page.navigate(prop.getProperty("url_signIn").trim());
             signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
         catch (TimeoutError ignored){}
         signInPage.signinIntoApplication(email, password, passwordconf);
