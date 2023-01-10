@@ -41,14 +41,15 @@ public class BaseTest {
         pf = new PlaywrightFactory();
         mail = email;
         psswd = pwd;
-        prop = pf.init_prop();
         dataSheet = sheet;
+        prop = pf.init_prop();
 
         if (browserName != null) {
             prop.setProperty("browser", browserName);
         }
 
         page = pf.initBrowser(prop);
+
         homePage = new HomePage(page);
         loginPage = new LoginPage(page);
         signInPage = new SignInPage(page);

@@ -44,7 +44,7 @@ public class TestRunner extends BaseTest {
         return usersData;
     }
 
-    @Test(dataProvider = "getRegistrationData", priority = 1)
+    @Test(dataProvider = "getRegistrationData", priority = 1,retryAnalyzer = Retry.class)@Severity(SeverityLevel.BLOCKER)
     public void createNewUserTest(String email, String password, String passwordconf) {
         try{
             page.navigate(prop.getProperty("url_signIn").trim());
@@ -105,7 +105,7 @@ public class TestRunner extends BaseTest {
 
 
 
-    @Test(priority = 3,dataProvider = "getProductData")
+    @Test(priority = 3,dataProvider = "getProductData",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
     public void searchTest(String productName)  {
         homePage.Idoasearch(productName);
         Locator p = homePage.page.locator(homePage.searchResult)
@@ -132,7 +132,7 @@ public class TestRunner extends BaseTest {
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd")
+    @Test(priority = 4,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
     public void addToCartTest(String productName, String quantity) {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
@@ -151,7 +151,7 @@ public class TestRunner extends BaseTest {
 
     }
 
-    @Test(priority = 5,dataProvider = "getProductDataForAdd")
+    @Test(priority = 5,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
     public void suppressFromCartTest(String productName, String quantity)  {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
@@ -163,7 +163,7 @@ public class TestRunner extends BaseTest {
 
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
     public void LOGOUT()  {
 
 

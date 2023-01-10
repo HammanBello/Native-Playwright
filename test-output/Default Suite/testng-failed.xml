@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="headless" value="false"/>
+  <parameter name="password" value="Marcelecon1."/>
+  <parameter name="mail" value="TESTEUR@gmail.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url_signIn" value="https://ztrain-web.vercel.app/auth/register"/>
+  <parameter name="psswd" value="douuuuuuu"/>
+  <parameter name="url" value="https://ztrain-web.vercel.app/auth/login"/>
+  <parameter name="username" value="gnanteff@gmail.com"/>
+  <test thread-count="5" name="Native-Playwright(failed)">
+    <classes>
+      <class name="tests.SoloRunner">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="createNewUserTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.SoloRunner -->
+    </classes>
+  </test> <!-- Native-Playwright(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

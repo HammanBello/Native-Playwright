@@ -84,7 +84,7 @@ public class PlaywrightFactory {
                 .setRecordVideoSize(1080, 720)));
         tlPage.set(getBrowserContext().newPage());
         getBrowserContext().tracing().start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true));
-        getPage().navigate(prop.getProperty("url").trim());
+//        getPage().navigate(prop.getProperty("url").trim());
         return getPage();
 
     }
