@@ -97,10 +97,8 @@ public class SoloRunner extends BaseTest {
                 break;
             case "used_IDs":
                 Assert.fail("L'utilisateur existe déjà");
-
                 break;
         }
-
     }
 
 

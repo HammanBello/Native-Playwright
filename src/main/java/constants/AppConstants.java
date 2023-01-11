@@ -11,7 +11,7 @@ public class AppConstants {
     public static final String ADDARTICLES_SHEET_NAME = "addarticles";
 
 
-    public  static String TESTDATA_SHEET_PATH = "C:/Users/hambe/Desktop/Native Playright/Native-Playwright/src/test/java/testdata/TestData.xlsx";
+    public  static String TESTDATA_SHEET_PATH = "src/test/java/testdata/TestData.xlsx";
 
     public static final int SHORT_WAIT = 3000;
     public static final int MEDIUM_WAIT = 6000;

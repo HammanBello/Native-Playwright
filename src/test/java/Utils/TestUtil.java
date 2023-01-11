@@ -48,7 +48,7 @@ public class TestUtil {
         FileInputStream file = null;
         try {
             if(dataSheet!=null)
-                file = new FileInputStream("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/src/test/java/testdata/"+dataSheet+".xlsx");
+                file = new FileInputStream("src/test/java/testdata/"+dataSheet+".xlsx");
             else
                  file = new FileInputStream(AppConstants.TESTDATA_SHEET_PATH);
 

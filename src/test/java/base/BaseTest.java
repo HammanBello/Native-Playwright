@@ -91,7 +91,7 @@ public class BaseTest {
 
 public void deleteScript(){
 
-    File index = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/allure-results");
+    File index = new File("allure-results");
     if (index.exists()) {
         String[]entries = index.list();
         for(String s: entries){
@@ -101,7 +101,7 @@ public void deleteScript(){
         }
 //            index.delete();
     }
-    File index2 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/screenshot");
+    File index2 = new File("screenshot");
     if (index2.exists()) {
         String[]entries = index2.list();
         for(String s: entries){
@@ -110,7 +110,7 @@ public void deleteScript(){
         }
         index2.delete();
     }
-    File index3 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/images");
+    File index3 = new File("images");
     if (index3.exists()) {
         String[]entries = index3.list();
         for(String s: entries){
@@ -119,7 +119,7 @@ public void deleteScript(){
         }
         index3.delete();
     }
-    File index4 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/Traces");
+    File index4 = new File("Traces");
     if (index4.exists()) {
         String[]entries = index4.list();
         for(String s: entries){
@@ -129,27 +129,27 @@ public void deleteScript(){
         index4.delete();
     }
 
-    File index5 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
-    if (index5.exists()) {
-        String[]entries = index5.list();
-        for(String s: entries){
-            if (!s.equals("environment.xml")){
-                File currentFile = new File(index5.getPath(),s);
-                currentFile.delete();
-            }
-        }
-//            index5.delete();
-    }
-    File index7 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/target/videos");
-    if (index7.exists()) {
-        String[]entries = index7.list();
-        for(String s: entries){
-            File currentFile = new File(index7.getPath(),s);
-            currentFile.delete();
-        }
-        index7.delete();
-    }
-    File index8 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/target/videos");
+//    File index5 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/allure-results");
+//    if (index5.exists()) {
+//        String[]entries = index5.list();
+//        for(String s: entries){
+//            if (!s.equals("environment.xml")){
+//                File currentFile = new File(index5.getPath(),s);
+//                currentFile.delete();
+//            }
+//        }
+////            index5.delete();
+//    }
+//    File index7 = new File("C:/ProgramData/Jenkins/.jenkins/workspace/PW_CI_CD/target/videos");
+//    if (index7.exists()) {
+//        String[]entries = index7.list();
+//        for(String s: entries){
+//            File currentFile = new File(index7.getPath(),s);
+//            currentFile.delete();
+//        }
+//        index7.delete();
+//    }
+    File index8 = new File("target/videos");
     if (index8.exists()) {
         String[]entries = index8.list();
         for(String s: entries){

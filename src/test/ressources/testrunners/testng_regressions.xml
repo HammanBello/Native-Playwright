@@ -31,7 +31,7 @@
         <parameter name="browser" value="chromium" />
         <parameter name="mail" value="gnanteff@gmail.com" />
         <parameter name="psswd" value="Marcelecon1." />
-        <parameter name="datasheet" value="datasource" />
+        <parameter name="datasheet" value="datasourcechromium" />
         <classes>
             <class name="tests.TestRunner" />
         </classes>

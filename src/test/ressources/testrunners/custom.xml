@@ -9,7 +9,7 @@
         <classes>
             <class name="tests.SoloRunner">
                 <methods>
-                    <include name="createNewUserTest"/>
+                    <include name="suppressFromCartTest"/>
                 </methods>
             </class> <!-- tests.SoloRunner -->
         </classes>
