@@ -49,7 +49,7 @@ public class TestRunner extends BaseTest {
         try{
             page.navigate(prop.getProperty("url_signIn").trim());
             signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (TimeoutError ignored){}
+        catch (com.microsoft.playwright.PlaywrightException exception){Assert.fail("Impossible d'acceder à la page d'inscription");}
         signInPage.signinIntoApplication(email, password, passwordconf);
         String s = signInPage.getSiteLogoVision();
         switch (s) {

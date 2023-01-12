@@ -1,9 +1,7 @@
 package tests;
 import Utils.TestUtil;
 import base.BaseTest;
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.TimeoutError;
+import com.microsoft.playwright.*;
 import constants.AppConstants;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -13,6 +11,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
+
+import javax.naming.NameNotFoundException;
+import java.lang.reflect.InvocationTargetException;
 
 import static java.lang.Float.parseFloat;
 
@@ -49,7 +50,7 @@ public class SoloRunner extends BaseTest {
         try{
             page.navigate(prop.getProperty("url_signIn").trim());
             signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (TimeoutError ignored){}
+        catch (com.microsoft.playwright.PlaywrightException exception){Assert.fail("Impossible d'acceder à la page d'inscription");}
         signInPage.signinIntoApplication(email, password, passwordconf);
         String s = signInPage.getSiteLogoVision();
         switch (s) {
@@ -78,7 +79,7 @@ public class SoloRunner extends BaseTest {
         try{
             homePage.page.navigate(prop.getProperty("url").trim(), new Page.NavigateOptions());
             homePage.page.waitForURL(prop.getProperty("url").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (TimeoutError error){
+        catch (PlaywrightException exception){
             Assert.fail("Impossible d'acceder à la page de login");
         }
         loginPage.loginIntoApplication(mail, psswd);

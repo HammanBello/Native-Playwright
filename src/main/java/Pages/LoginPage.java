@@ -38,21 +38,21 @@ public class LoginPage {
         enteremail(email);
         enterPassword(pass);
         clickLoginButton();}
-        catch (TimeoutError error){
+        catch (com.microsoft.playwright.PlaywrightException exception){
             Assert.fail("Impossible de remplir les champs");
         }
     }
 
     public void enteremail(String mail) {
-        page.fill(email, mail);
+        page.fill(email, mail, new Page.FillOptions().setTimeout(5000));
     }
 
     public void enterPassword(String pass) {
-        page.fill(password, pass);
+        page.fill(password, pass,new Page.FillOptions().setTimeout(5000));
     }
 
     public void clickLoginButton() {
-        page.click(clickLogin);
+        page.click(clickLogin, new Page.ClickOptions().setTimeout(5000));
     }
 
 
