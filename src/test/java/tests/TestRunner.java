@@ -132,7 +132,7 @@ public class TestRunner extends BaseTest {
         }
     }
 
-    @Test(priority = 4,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 4,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.NORMAL)
     public void addToCartTest(String productName, String quantity) {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
