@@ -6,6 +6,7 @@ import io.qameta.allure.internal.shadowed.jackson.databind.exc.InvalidFormatExce
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.testng.Assert;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -53,14 +54,17 @@ public class TestUtil {
                  file = new FileInputStream(AppConstants.TESTDATA_SHEET_PATH);
 
         } catch (FileNotFoundException e) {
+            Assert.fail("Fichier introuvable");
             e.printStackTrace();
         }
 
         try {
             book = WorkbookFactory.create(file);
         } catch (InvalidFormatException e) {
+            Assert.fail("Format Invalide");
             e.printStackTrace();
         } catch (IOException e) {
+            Assert.fail("Format Invalide");
             e.printStackTrace();
         }
 

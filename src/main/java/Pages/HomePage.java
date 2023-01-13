@@ -122,7 +122,7 @@ public class HomePage {
         try {
             Locator p = page.locator(searchResult)
                     .filter(new Locator.FilterOptions().setHasText(articleToAdd)).first();
-            p.waitFor(new Locator.WaitForOptions().setTimeout(15000));
+            p.waitFor(new Locator.WaitForOptions().setTimeout(5000));
             p.click();
             return true;
         } catch (TimeoutError e) {
@@ -257,7 +257,7 @@ public class HomePage {
             p.locator(".style_quantity_dec__nm5ig").click(new Locator.ClickOptions().setTimeout(3000));
         } catch (TimeoutError e) {
             System.out.println("Timeout to press on reduce button!");
-            Assert.fail("Impossible de supprimer l'article");
+            Assert.fail("Impossible de localiser l'article");
         }
 //        page.waitForLoadState(LOAD, new Page.WaitForLoadStateOptions().setTimeout(5000));
         page.waitForTimeout(3000);

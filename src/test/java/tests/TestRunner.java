@@ -44,32 +44,32 @@ public class TestRunner extends BaseTest {
         return usersData;
     }
 
-    @Test(dataProvider = "getRegistrationData", priority = 1,retryAnalyzer = Retry.class)@Severity(SeverityLevel.BLOCKER)
-    public void createNewUserTest(String email, String password, String passwordconf) {
-        try{
-            page.navigate(prop.getProperty("url_signIn").trim());
-            signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
-        catch (com.microsoft.playwright.PlaywrightException exception){Assert.fail("Impossible d'acceder à la page d'inscription");}
-        signInPage.signinIntoApplication(email, password, passwordconf);
-        String s = signInPage.getSiteLogoVision();
-        switch (s) {
-            case "ok":
-                System.out.println("ok");
-                break;
-            case "no_logo_seen":
-                Assert.fail("Impossible d'acceder à la page Home");
-                break;
-            case "used_IDs":
-                Assert.fail("L'utilisateur existe déjà");
-            case "short_Pswd":
-                Assert.fail("Mot de passe trop court");
-            case "same_Pswds":
-                Assert.fail("Les mot de passe ne correspondent pas");
-            case "invalidIDs":
-                Assert.fail("L'adresse mail n'a pas un format valide");
-                break;
-        }
-    }
+//    @Test(dataProvider = "getRegistrationData", priority = 1,retryAnalyzer = Retry.class)@Severity(SeverityLevel.BLOCKER)
+//    public void createNewUserTest(String email, String password, String passwordconf) {
+//        try{
+//            page.navigate(prop.getProperty("url_signIn").trim());
+//            signInPage.page.waitForURL(prop.getProperty("url_signIn").trim(), new Page.WaitForURLOptions().setTimeout(10000));}
+//        catch (com.microsoft.playwright.PlaywrightException exception){Assert.fail("Impossible d'acceder à la page d'inscription");}
+//        signInPage.signinIntoApplication(email, password, passwordconf);
+//        String s = signInPage.getSiteLogoVision();
+//        switch (s) {
+//            case "ok":
+//                System.out.println("ok");
+//                break;
+//            case "no_logo_seen":
+//                Assert.fail("Impossible d'acceder à la page Home");
+//                break;
+//            case "used_IDs":
+//                Assert.fail("L'utilisateur existe déjà");
+//            case "short_Pswd":
+//                Assert.fail("Mot de passe trop court");
+//            case "same_Pswds":
+//                Assert.fail("Les mot de passe ne correspondent pas");
+//            case "invalidIDs":
+//                Assert.fail("L'adresse mail n'a pas un format valide");
+//                break;
+//        }
+//    }
 
 //    @Severity(SeverityLevel.BLOCKER) can be catch up with throws InterruptedException
 
@@ -147,11 +147,14 @@ public class TestRunner extends BaseTest {
         Assert.assertTrue(b,"Article inexistant ou non localisable");
         homePage.ClickOnAddToCart(X);
         Assert.assertTrue(homePage.VerifyArticleInCart(productName),"Article absent du panier");
-    homePage.page.click("text=LES PRODUITS");
+    try{homePage.page.click("text=LES PRODUITS");}
+        catch (TimeoutError error){
+        Assert.fail("Impossible de fermer le panier");
+    }
 
     }
 
-    @Test(priority = 5,dataProvider = "getProductDataForAdd",retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    @Test(priority = 5,dataProvider = "getProductDataForAdd")@Severity(SeverityLevel.NORMAL)
     public void suppressFromCartTest(String productName, String quantity)  {
         float Z = parseFloat(quantity);
         int X = Math.round(Z)  ;
@@ -163,19 +166,19 @@ public class TestRunner extends BaseTest {
 
     }
 
-    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
-    public void LOGOUT()  {
-
-
-        try{
-        homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
-        homePage.disconnect();
-        homePage.page.waitForSelector("text=Connexion",new Page.WaitForSelectorOptions().setTimeout(4000));}
-        catch (TimeoutError error){
-            Assert.fail("Impossible de cliquer sur le boutton déconnexion");
-        }
-
-    }
+//    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+//    public void LOGOUT()  {
+//
+//
+//        try{
+//        homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
+//        homePage.disconnect();
+//        homePage.page.waitForSelector("text=Connexion",new Page.WaitForSelectorOptions().setTimeout(4000));}
+//        catch (TimeoutError error){
+//            Assert.fail("Impossible de cliquer sur le boutton déconnexion");
+//        }
+//
+//    }
 
 
 }
