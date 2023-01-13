@@ -250,17 +250,16 @@ public class HomePage {
     public void DeleteFromCart(String s)  {
 
         try {
-
+            page.waitForTimeout(3000);
             String[] productNames = s.split(" ");
             Locator p = page.locator(".style_card__JLMp6")
-                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0])));
-            p.locator(".style_quantity_dec__nm5ig").click(new Locator.ClickOptions().setTimeout(3000));
+                    .filter(new Locator.FilterOptions().setHasText(Pattern.compile(productNames[0], Pattern.CASE_INSENSITIVE))).first();
+            p.locator(".style_quantity_dec__nm5ig").click(new Locator.ClickOptions().setTimeout(5000));
         } catch (TimeoutError e) {
             System.out.println("Timeout to press on reduce button!");
             Assert.fail("Impossible de localiser l'article");
         }
 //        page.waitForLoadState(LOAD, new Page.WaitForLoadStateOptions().setTimeout(5000));
-        page.waitForTimeout(3000);
     }
     public void ClickOnCartIcon() {
         try {
@@ -283,7 +282,7 @@ public class HomePage {
             p.waitFor(new Locator.WaitForOptions().setTimeout(2000));
 //            page.waitForSelector(searchResult, new Page.WaitForSelectorOptions().setTimeout(15000));
         } catch (TimeoutError e) {
-            System.out.println("Timeout pour le résultat de la recherche!");
+            System.out.println("Timeout pour le résultat de la vérification de suppression!");
         }
         if(p.isVisible())
             return (true);

@@ -162,23 +162,26 @@ public class TestRunner extends BaseTest {
         for (int i=0;i<X;i++)
             {homePage.DeleteFromCart(productName);
             }
+        try{            page.waitForTimeout(3000);
+        }
+        catch (TimeoutError ignored){}
         Assert.assertFalse(homePage.VerifyArticleDeletion(productName),"Article toujours présent dans le panier");
 
     }
 
-//    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
-//    public void LOGOUT()  {
-//
-//
-//        try{
-//        homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
-//        homePage.disconnect();
-//        homePage.page.waitForSelector("text=Connexion",new Page.WaitForSelectorOptions().setTimeout(4000));}
-//        catch (TimeoutError error){
-//            Assert.fail("Impossible de cliquer sur le boutton déconnexion");
-//        }
-//
-//    }
+    @Test(priority = 6,retryAnalyzer = Retry.class)@Severity(SeverityLevel.NORMAL)
+    public void LOGOUT()  {
+
+
+        try{
+        homePage.page.click("text= LES PRODUITS", new Page.ClickOptions().setTimeout(5000));
+        homePage.disconnect();
+        homePage.page.waitForSelector("text=Connexion",new Page.WaitForSelectorOptions().setTimeout(4000));}
+        catch (TimeoutError error){
+            Assert.fail("Impossible de cliquer sur le boutton déconnexion");
+        }
+
+    }
 
 
 }

@@ -163,6 +163,9 @@ public class SoloRunner extends BaseTest {
         for (int i=0;i<X;i++)
         {homePage.DeleteFromCart(productName);
         }
+        try{            page.waitForTimeout(3000);
+        }
+        catch (TimeoutError ignored){}
         Assert.assertFalse(homePage.VerifyArticleDeletion(productName),"Article toujours présent dans le panier");
 
     }
