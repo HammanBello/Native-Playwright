@@ -116,7 +116,6 @@ public class TestRunner extends BaseTest {
             count++;
         for (int i = 0; i < count; ++i) {
             String s = homePage.getResultSearch(i, productName);
-
             switch (s) {
                 case "ok":
                     System.out.println("ok");

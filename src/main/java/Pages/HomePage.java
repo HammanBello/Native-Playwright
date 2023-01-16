@@ -184,6 +184,7 @@ public class HomePage {
                 page.waitForSelector(cartIcon, new Page.WaitForSelectorOptions().setTimeout(5000));
                 page.click(cartIcon);
                 page.click("text=Vider le panier");
+                page.waitForTimeout(3000);
 //                page.waitForSelector(badgeOfAdd , new Page.WaitForSelectorOptions().setTimeout(15000));
             } catch (TimeoutError e) {
                 System.out.println("Timeout to empty the cart!");
@@ -202,8 +203,8 @@ public class HomePage {
     public void Idoasearch(String searchTerm) {
         try {
             page.waitForURL("**/home", new Page.WaitForURLOptions().setTimeout(9000));
-            page.waitForLoadState(DOMCONTENTLOADED);
-            page.waitForTimeout(2000);
+            page.waitForLoadState(NETWORKIDLE);
+            page.waitForTimeout(6000);
             page.waitForLoadState();
 
             page.fill(searchBar, searchTerm);

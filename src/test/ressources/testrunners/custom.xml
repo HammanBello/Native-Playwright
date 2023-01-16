@@ -10,6 +10,8 @@
             <class name="tests.SoloRunner">
                 <methods>
                     <include name="suppressFromCartTest"/>
+                    <include name="searchTest"/>
+
                 </methods>
             </class> <!-- tests.SoloRunner -->
         </classes>

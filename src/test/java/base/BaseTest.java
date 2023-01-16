@@ -101,7 +101,7 @@ public void deleteScript(){
         }
 //            index.delete();
     }
-    File index2 = new File("screenshot");
+    File index2 = new File("C:/Users/hambe/Desktop/Native Playright/Native-Playwright/target/screenshot");
     if (index2.exists()) {
         String[]entries = index2.list();
         for(String s: entries){

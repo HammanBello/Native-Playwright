@@ -2,6 +2,7 @@ package tests;
 import Utils.TestUtil;
 import base.BaseTest;
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.LoadState;
 import constants.AppConstants;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -161,7 +162,10 @@ public class SoloRunner extends BaseTest {
         int X = Math.round(Z)  ;
         homePage.ClickOnCartIcon();
         for (int i=0;i<X;i++)
-        {homePage.DeleteFromCart(productName);
+        {           try{            page.waitForLoadState(LoadState.NETWORKIDLE);
+        }
+        catch (TimeoutError ignored){}
+            homePage.DeleteFromCart(productName);
         }
         try{            page.waitForTimeout(3000);
         }
